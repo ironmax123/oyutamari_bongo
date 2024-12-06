@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/pages/sounds_test.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AudioPlayer.clearAssetCache();
   runApp(const MyApp());
 }
 
