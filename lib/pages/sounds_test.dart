@@ -9,7 +9,7 @@ class SoundsTest extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final audioPlayer = useMemoized(() => AudioPlayer());
-    final audioPlayer2 = useMemoized(() => AudioPlayer());
+    final se = useMemoized(() => AudioPlayer());
     final isPlaying = useState(false);
 
     Future<void> setupSessionAndLoadAudio() async {
@@ -17,7 +17,7 @@ class SoundsTest extends HookWidget {
         final session = await AudioSession.instance;
         await session.configure(const AudioSessionConfiguration.speech());
         await audioPlayer.setAsset('assets/sounds/audio.mp3');
-        await audioPlayer2.setAsset('assets/sounds/se1.mp3');
+        await se.setAsset('assets/sounds/se1.mp3');
         debugPrint('音声ファイルロード完了');
       } catch (e) {
         debugPrint('Error: $e');
@@ -44,13 +44,13 @@ class SoundsTest extends HookWidget {
                   await audioPlayer.play();
                   // 2秒後に別の音声を再生
                   Future.delayed(const Duration(seconds: 2), () async {
-                    await audioPlayer2.play();
-                    audioPlayer2.setLoopMode(LoopMode.one);
+                    await se.play();
+                    se.setLoopMode(LoopMode.one);
                   });
                   audioPlayer.setLoopMode(LoopMode.one);
                 } else {
                   await audioPlayer.pause();
-                  await audioPlayer2.pause();
+                  await se.pause();
                 }
               },
               iconSize: 128,
@@ -62,7 +62,7 @@ class SoundsTest extends HookWidget {
                     playSpeed.value = 1.0;
                   }
                   audioPlayer.setSpeed(playSpeed.value);
-                  audioPlayer2.setSpeed(playSpeed.value);
+                  se.setSpeed(playSpeed.value);
                 },
                 child: Text('×${playSpeed.value}'))
           ],
