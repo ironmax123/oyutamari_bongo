@@ -26,29 +26,32 @@ class SoundsTest extends HookWidget {
 
     useEffect(() {
       setupSessionAndLoadAudio();
-      return () => audioPlayer.dispose(); // コンポーネント破棄時に解放
+      return () => audioPlayer.dispose();
     }, [audioPlayer]);
     final playSpeed = useState(1.0);
     return Scaffold(
         appBar: AppBar(title: const Text('BGMテスト')),
-        body: Column(
+        body: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
               icon: Icon(isPlaying.value ? Icons.pause : Icons.play_arrow),
               onPressed: () async {
+                isPlaying.value = !isPlaying.value;
+
                 if (isPlaying.value) {
-                  await audioPlayer.pause();
-                  await audioPlayer2.pause();
-                } else {
                   await audioPlayer.play();
                   // 2秒後に別の音声を再生
                   Future.delayed(const Duration(seconds: 2), () async {
                     await audioPlayer2.play();
-                    audioPlayer2.setLoopMode(LoopMode.one); // ループ再生設定
+                    audioPlayer2.setLoopMode(LoopMode.one);
                   });
-                  audioPlayer.setLoopMode(LoopMode.one); // ループ再生設定
+                  audioPlayer.setLoopMode(LoopMode.one);
+                } else {
+                  await audioPlayer.pause();
+                  await audioPlayer2.pause();
                 }
-                isPlaying.value = !isPlaying.value;
               },
               iconSize: 128,
             ),
@@ -63,6 +66,6 @@ class SoundsTest extends HookWidget {
                 },
                 child: Text('×${playSpeed.value}'))
           ],
-        ));
+        )));
   }
 }
