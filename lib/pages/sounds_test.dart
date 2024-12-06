@@ -38,13 +38,15 @@ class SoundsTest extends HookWidget {
               onPressed: () async {
                 if (isPlaying.value) {
                   await audioPlayer.pause();
+                  await audioPlayer2.pause();
                 } else {
                   await audioPlayer.play();
-                  Future.delayed(const Duration(seconds: 2), () {
-                    audioPlayer2.play();
+                  // 2秒後に別の音声を再生
+                  Future.delayed(const Duration(seconds: 2), () async {
+                    await audioPlayer2.play();
+                    audioPlayer2.setLoopMode(LoopMode.one); // ループ再生設定
                   });
-                  audioPlayer.loopMode;
-                  audioPlayer2.loopMode;
+                  audioPlayer.setLoopMode(LoopMode.one); // ループ再生設定
                 }
                 isPlaying.value = !isPlaying.value;
               },
@@ -57,6 +59,7 @@ class SoundsTest extends HookWidget {
                     playSpeed.value = 1.0;
                   }
                   audioPlayer.setSpeed(playSpeed.value);
+                  audioPlayer2.setSpeed(playSpeed.value);
                 },
                 child: Text('×${playSpeed.value}'))
           ],
