@@ -7,7 +7,7 @@ class SoundsTest extends HookWidget {
   const SoundsTest({super.key});
   @override
   Widget build(BuildContext context) {
-    const text = '音声テスト';
+    const text = 'スタート';
     final audioPlayer = useMemoized(() => AudioPlayer());
     useEffect(() {
       Future<void> initAudio() async {
@@ -24,7 +24,7 @@ class SoundsTest extends HookWidget {
     }, [audioPlayer]);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('音声テスト')),
+      appBar: AppBar(title: const Text('BGMテスト')),
       body: Column(
         children: [
           ElevatedButton(

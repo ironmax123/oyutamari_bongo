@@ -11,12 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // デバッグバナーを非表示にする
       title: 'お湯たまりボンゴ',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SoundsTest(), // アプリのホームページを指定
+      home: const SoundsTest(),
     );
   }
 }
