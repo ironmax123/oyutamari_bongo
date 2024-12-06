@@ -42,7 +42,6 @@ class SoundsTest extends HookWidget {
 
                 if (isPlaying.value) {
                   await audioPlayer.play();
-                  // 2秒後に別の音声を再生
                   Future.delayed(const Duration(seconds: 2), () async {
                     await se.play();
                     se.setLoopMode(LoopMode.one);

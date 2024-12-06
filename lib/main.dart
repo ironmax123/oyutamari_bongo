@@ -4,7 +4,13 @@ import 'package:oyutamaribondo/pages/sounds_test.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await AudioPlayer.clearAssetCache();
+  try {
+    await AudioPlayer.clearAssetCache();
+  } catch (e) {
+    debugPrint('No cache to delete.');
+    debugPrint("Error: $e");
+  }
+
   runApp(const MyApp());
 }
 
