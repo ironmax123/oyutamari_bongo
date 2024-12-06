@@ -8,14 +8,16 @@ class SoundsTest extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    const text = 'スタート';
     final audioPlayer = useMemoized(() => AudioPlayer());
+    final audioPlayer2 = useMemoized(() => AudioPlayer());
+    final isPlaying = useState(false);
 
     Future<void> setupSessionAndLoadAudio() async {
       try {
         final session = await AudioSession.instance;
         await session.configure(const AudioSessionConfiguration.speech());
         await audioPlayer.setAsset('assets/sounds/audio.mp3');
+        await audioPlayer2.setAsset('assets/sounds/se1.mp3');
         debugPrint('音声ファイルロード完了');
       } catch (e) {
         debugPrint('Error: $e');
@@ -26,22 +28,38 @@ class SoundsTest extends HookWidget {
       setupSessionAndLoadAudio();
       return () => audioPlayer.dispose(); // コンポーネント破棄時に解放
     }, [audioPlayer]);
-
+    final playSpeed = useState(1.0);
     return Scaffold(
-      appBar: AppBar(title: const Text('BGMテスト')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () async {
-            try {
-              await audioPlayer.play();
-              debugPrint('再生');
-            } catch (e) {
-              debugPrint('エラー: $e');
-            }
-          },
-          child: const Text(text),
-        ),
-      ),
-    );
+        appBar: AppBar(title: const Text('BGMテスト')),
+        body: Column(
+          children: [
+            IconButton(
+              icon: Icon(isPlaying.value ? Icons.pause : Icons.play_arrow),
+              onPressed: () async {
+                if (isPlaying.value) {
+                  await audioPlayer.pause();
+                } else {
+                  await audioPlayer.play();
+                  Future.delayed(const Duration(seconds: 2), () {
+                    audioPlayer2.play();
+                  });
+                  audioPlayer.loopMode;
+                  audioPlayer2.loopMode;
+                }
+                isPlaying.value = !isPlaying.value;
+              },
+              iconSize: 128,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  playSpeed.value += 0.5;
+                  if (playSpeed.value > 3) {
+                    playSpeed.value = 1.0;
+                  }
+                  audioPlayer.setSpeed(playSpeed.value);
+                },
+                child: Text('×${playSpeed.value}'))
+          ],
+        ));
   }
 }
