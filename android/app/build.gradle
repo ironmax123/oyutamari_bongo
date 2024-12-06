@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.oyutamaribondo"
+    namespace = "com.example.oyutamaribongo"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
