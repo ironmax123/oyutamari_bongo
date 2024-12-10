@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:oyutamaribondo/pages/sounds_test.dart';
+import '/pages/sounds_test.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

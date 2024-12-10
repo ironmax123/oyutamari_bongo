@@ -3,21 +3,23 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
 
+import '../enums/sound_button.dart';
+import '../gen/assets.gen.dart';
+import 'components/sounds_button.dart';
+
 class SoundsTest extends HookWidget {
   const SoundsTest({super.key});
 
   @override
   Widget build(BuildContext context) {
     final audioPlayer = useMemoized(() => AudioPlayer());
-    final se = useMemoized(() => AudioPlayer());
+    final audioPlayer2 = useMemoized(() => AudioPlayer());
     final isPlaying = useState(false);
-
     Future<void> setupSessionAndLoadAudio() async {
       try {
         final session = await AudioSession.instance;
         await session.configure(const AudioSessionConfiguration.speech());
-        await audioPlayer.setAsset('assets/sounds/audio.mp3');
-        await se.setAsset('assets/sounds/se1.mp3');
+        await audioPlayer.setAsset(Assets.sounds.audio);
         debugPrint('音声ファイルロード完了');
       } catch (e) {
         debugPrint('Error: $e');
@@ -42,14 +44,9 @@ class SoundsTest extends HookWidget {
 
                 if (isPlaying.value) {
                   await audioPlayer.play();
-                  Future.delayed(const Duration(seconds: 2), () async {
-                    await se.play();
-                    se.setLoopMode(LoopMode.one);
-                  });
                   audioPlayer.setLoopMode(LoopMode.one);
                 } else {
                   await audioPlayer.pause();
-                  await se.pause();
                 }
               },
               iconSize: 128,
@@ -61,9 +58,11 @@ class SoundsTest extends HookWidget {
                     playSpeed.value = 1.0;
                   }
                   audioPlayer.setSpeed(playSpeed.value);
-                  se.setSpeed(playSpeed.value);
                 },
-                child: Text('×${playSpeed.value}'))
+                child: Text('×${playSpeed.value}')),
+            ...SButtonType.values.map((buttonType) {
+              return buttonWidget(buttonType, audioPlayer2);
+            }).toList(),
           ],
         )));
   }
