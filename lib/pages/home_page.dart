@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                   ),
-                  child:Expanded(
+                  child: Expanded(
                     child: Column(
                       children: [
                         ImageButton(
@@ -140,13 +140,37 @@ class HomePage extends StatelessWidget {
                 ),
 
                 ImageButton(
-                  imagePath: 'assets/images/button2.png',
+                  imagePath: 'assets/images/button5.png',
                   width: 100,
                   height: 100,
                   onPressed: () {
                     // ボタン2の処理
                   },
                 ),
+
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ImageButton(
+                        imagePath: 'assets/images/button1.png',
+                        width: 50,
+                        height: 50,
+                        onPressed: () {
+                          // ボタン6の処理
+                        },
+                      ),
+                      ImageButton(
+                        imagePath: 'assets/images/button1.png',
+                        width: 50,
+                        height: 50,
+                        onPressed: () {
+                          // ボタン6の処理
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+               
                 // 他のボタンも同様に追加
               ],
             ),
