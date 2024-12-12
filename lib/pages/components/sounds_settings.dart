@@ -1,9 +1,9 @@
-//import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-
-//import '../../enums/sound_sections.dart';
 import '../../enums/sections_text.dart';
 import './fill_bath.dart';
+
+//import '../../enums/sound_sections.dart';
+//import 'package:flutter/material.dart';
 
 /// ボタンウィジェット
 /*Widget buttonWidget(SButtonType buttonType, AudioPlayer audioPlayer) {
@@ -11,9 +11,9 @@ import './fill_bath.dart';
     onPressed: () async {
       try {
         for (String path in buttonType.soundPaths) {
-          final audioPlayer2 = AudioPlayer();
-          await audioPlayer2.setAsset(path);
-          audioPlayer2.play();
+          final subPlayer = AudioPlayer();
+          await subPlayer.setAsset(path);
+          subPlayer.play();
         }
         await audioPlayer.setSpeed(buttonType.soundSpeed);
       } catch (e) {
@@ -26,17 +26,16 @@ import './fill_bath.dart';
 
 class SoundsSettings {
   FillBath fillRatio = FillBath();
-  Future<void> settings(double ratio, audioPlayer, audioPlayer2) async {
+  Future<void> settings(double ratio, mainPlayer, subPlayer) async {
     final section = fillRatio.filled(ratio);
-    await audioPlayer.setSpeed(section.soundSpeed);
-    final audioPlayers =
-        section.soundPaths.map((path) => AudioPlayer()).toList();
-    await Future.wait(audioPlayers.map((audioPlayer2) async {
-      final index = audioPlayers.indexOf(audioPlayer2);
+    await subPlayer.setSpeed(section.soundSpeed);
+    subPlayer = section.soundPaths.map((path) => AudioPlayer()).toList();
+    await Future.wait(subPlayer.map((subPlayer) async {
+      final index = subPlayer.indexOf(subPlayer);
       final path = section.soundPaths[index];
-      await audioPlayer2.setAsset(path);
-      await audioPlayer2.play();
-      audioPlayer2.setLoopMode(LoopMode.one);
+      await subPlayer.setAsset(path);
+      await subPlayer.play();
+      subPlayer.setLoopMode(LoopMode.one);
     }));
   }
 }
