@@ -5,7 +5,7 @@ import 'package:audio_session/audio_session.dart';
 import '../../gen/assets.gen.dart';
 import 'components/se_button.dart';
 import 'logic/change_speed.dart';
-import '../../enums/sound_sections.dart';
+import '../../enums/sound_enum.dart';
 
 class SoundsTest extends HookWidget {
   const SoundsTest({super.key});

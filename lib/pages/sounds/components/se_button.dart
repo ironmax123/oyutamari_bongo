@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import '/enums/sections_text.dart';
+import '../../../enums/extension.dart';
 
-import '/enums/sound_sections.dart';
+import '../../../enums/sound_enum.dart';
 
 /// ボタンウィジェット
 Widget buttonWidget(SButtonType buttonType, AudioPlayer audioPlayer) {

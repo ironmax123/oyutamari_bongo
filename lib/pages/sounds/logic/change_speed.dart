@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../enums/sections_text.dart';
-import '../../../enums/sound_sections.dart';
+import '../../../enums/extension.dart';
+import '../../../enums/sound_enum.dart';
 
 class FillBath {
   Sections filled(double ratio) {

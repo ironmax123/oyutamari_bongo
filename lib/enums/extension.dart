@@ -1,5 +1,5 @@
 import '../gen/assets.gen.dart';
-import 'sound_sections.dart';
+import 'sound_enum.dart';
 
 extension SectionsType on Sections {
   double get soundSpeed {
