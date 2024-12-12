@@ -1,4 +1,4 @@
-enum SButtonType {
+enum Sections {
   low,
   mid,
   high,
