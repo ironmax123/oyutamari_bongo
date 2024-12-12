@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../enums/sections_text.dart';
 import '../../../enums/sound_sections.dart';
 
 class FillBath {
@@ -16,5 +17,13 @@ class FillBath {
       debugPrint('Invalid ratio value: $ratio');
       return Sections.low;
     }
+  }
+}
+
+class SoundsSettings {
+  FillBath fillRatio = FillBath();
+  Future<void> settings(double ratio, mainPlayer) async {
+    final section = fillRatio.filled(ratio);
+    await mainPlayer.setSpeed(section.soundSpeed);
   }
 }

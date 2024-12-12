@@ -1,38 +1,7 @@
 import '../gen/assets.gen.dart';
 import 'sound_sections.dart';
 
-extension SectionsExt on Sections {
-  String get buttonText {
-    switch (this) {
-      case Sections.low:
-        return 'low';
-      case Sections.mid:
-        return 'mid';
-      case Sections.high:
-        return 'high';
-      case Sections.above:
-        return 'above';
-    }
-  }
-
-  List<String> get soundPaths {
-    switch (this) {
-      case Sections.low:
-        return [Assets.sounds.se1];
-      case Sections.mid:
-        return [Assets.sounds.se1, Assets.sounds.se2];
-      case Sections.high:
-        return [Assets.sounds.se1, Assets.sounds.se2, Assets.sounds.se3];
-      case Sections.above:
-        return [
-          Assets.sounds.se1,
-          Assets.sounds.se2,
-          Assets.sounds.se3,
-          Assets.sounds.se4,
-        ];
-    }
-  }
-
+extension SectionsType on Sections {
   double get soundSpeed {
     switch (this) {
       case Sections.low:
@@ -43,6 +12,34 @@ extension SectionsExt on Sections {
         return 2;
       case Sections.above:
         return 3;
+    }
+  }
+}
+
+extension SButtonText on SButtonType {
+  String get buttonText {
+    switch (this) {
+      case SButtonType.se1:
+        return 'se1';
+      case SButtonType.se2:
+        return 'se2';
+      case SButtonType.se3:
+        return 'se3';
+      case SButtonType.se4:
+        return 'se4';
+    }
+  }
+
+  String get soundPaths {
+    switch (this) {
+      case SButtonType.se1:
+        return Assets.sounds.se1;
+      case SButtonType.se2:
+        return Assets.sounds.se2;
+      case SButtonType.se3:
+        return Assets.sounds.se3;
+      case SButtonType.se4:
+        return Assets.sounds.se4;
     }
   }
 }

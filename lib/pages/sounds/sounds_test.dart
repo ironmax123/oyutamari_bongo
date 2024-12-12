@@ -4,7 +4,8 @@ import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
 import '../../gen/assets.gen.dart';
 import 'components/sounds_settings.dart';
-//import '../enums/sound_sections.dart';
+import 'logic/fill_bath.dart';
+import '../../enums/sound_sections.dart';
 
 class SoundsTest extends HookWidget {
   const SoundsTest({super.key});
@@ -15,7 +16,7 @@ class SoundsTest extends HookWidget {
     final subPlayer = useMemoized(() => AudioPlayer());
     final setting = useMemoized(() => SoundsSettings());
     final isPlaying = useState(false);
-    final filldNum = useState(46.0); //ラズパイの送信された数値の変数
+    final filldNum = useState(0.0); //ラズパイの送信された数値の変数
     Future<void> setupSessionAndLoadAudio() async {
       try {
         final session = await AudioSession.instance;
@@ -46,12 +47,14 @@ class SoundsTest extends HookWidget {
                   setting.settings(
                     filldNum.value,
                     mainPlayer,
-                    subPlayer,
                   );
                   mainPlayer.setLoopMode(LoopMode.one);
                 } else {
                   await mainPlayer.pause();
-                  await subPlayer.pause();
+                  setting.settings(
+                    filldNum.value,
+                    mainPlayer,
+                  );
                 }
               },
               iconSize: 128,
@@ -67,10 +70,10 @@ class SoundsTest extends HookWidget {
                 child: Text('×${playSpeed.value}')),
             const SizedBox(
               height: 16,
-            ),
+            ),*/
             ...SButtonType.values.map((buttonType) {
-              return buttonWidget(buttonType, mainPlayer);
-            }).toList(),*/
+              return buttonWidget(buttonType, subPlayer);
+            }).toList(),
           ],
         )));
   }
