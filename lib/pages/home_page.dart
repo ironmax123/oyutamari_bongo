@@ -57,13 +57,88 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 ImageButton(
-                  imagePath: 'assets/images/button1.png',
+                  imagePath: 'assets/images/button8.png',
                   width: 100,
                   height: 100,
                   onPressed: () {
                     // ボタン1の処理
                   },
                 ),
+
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ImageButton(
+                        imagePath: 'assets/images/button7.png',
+                        width: 100,
+                        height: 50,
+                        onPressed: () {
+                          // ボタン6の処理
+                        },
+                      ),
+                      ImageButton(
+                        imagePath: 'assets/images/button7.png',
+                        width: 100,
+                        height: 50,
+                        onPressed: () {
+                          // ボタン6の処理
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                  ),
+                  child:Expanded(
+                    child: Column(
+                      children: [
+                        ImageButton(
+                          imagePath: 'assets/images/button3.png',
+                          width: 100,
+                          height: 50,
+                          onPressed: () {
+                            // ボタン6の処理
+                          },
+                        ),
+                        ImageButton(
+                          imagePath: 'assets/images/button3.png',
+                          width: 100,
+                          height: 100,
+                          onPressed: () {
+                            // ボタン6の処理
+                          },
+                        ),
+                        ImageButton(
+                          imagePath: 'assets/images/button3.png',
+                          width: 100,
+                          height: 100,
+                          onPressed: () {
+                            // ボタン6の処理
+                          },
+                        ),
+                        ImageButton(
+                          imagePath: 'assets/images/button3.png',
+                          width: 100,
+                          height: 100,
+                          onPressed: () {
+                            // ボタン6の処理
+                          },
+                        ),
+                        ImageButton(
+                          imagePath: 'assets/images/button3.png',
+                          width: 100,
+                          height: 100,
+                          onPressed: () {
+                            // ボタン6の処理
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
                 ImageButton(
                   imagePath: 'assets/images/button2.png',
                   width: 100,
