@@ -19,13 +19,55 @@ class HomePage extends StatelessWidget {
               crossAxisCount: 3,
               children: [
                 ImageButton(
+                  imagePath: 'assets/images/button4.png',
+                  width: 100,
+                  height: 100,
+                  onPressed: () {
+                    // ボタン4の処理
+                  },
+                ),
+                ImageButton(
+                  imagePath: 'assets/images/button4.png',
+                  width: 100,
+                  height: 100,
+                  onPressed: () {
+                    // ボタン4の処理
+                  },
+                ),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ImageButton(
+                        imagePath: 'assets/images/button6.png',
+                        width: 100,
+                        height: 50,
+                        onPressed: () {
+                          // ボタン6の処理
+                        },
+                      ),
+                      ImageButton(
+                        imagePath: 'assets/images/button6.png',
+                        width: 100,
+                        height: 50,
+                        onPressed: () {
+                          // ボタン6の処理
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                ImageButton(
                   imagePath: 'assets/images/button1.png',
+                  width: 100,
+                  height: 100,
                   onPressed: () {
                     // ボタン1の処理
                   },
                 ),
                 ImageButton(
                   imagePath: 'assets/images/button2.png',
+                  width: 100,
+                  height: 100,
                   onPressed: () {
                     // ボタン2の処理
                   },
