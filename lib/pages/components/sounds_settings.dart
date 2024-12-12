@@ -28,7 +28,7 @@ class SoundsSettings {
   FillBath fillRatio = FillBath();
   Future<void> settings(double ratio, mainPlayer, subPlayer) async {
     final section = fillRatio.filled(ratio);
-    await subPlayer.setSpeed(section.soundSpeed);
+    await mainPlayer.setSpeed(section.soundSpeed);
     subPlayer = section.soundPaths.map((path) => AudioPlayer()).toList();
     await Future.wait(subPlayer.map((subPlayer) async {
       final index = subPlayer.indexOf(subPlayer);

@@ -31,7 +31,6 @@ class SoundsTest extends HookWidget {
       setupSessionAndLoadAudio();
       return () => mainPlayer.dispose();
     }, [mainPlayer]);
-    final playSpeed = useState(1.0);
     return Scaffold(
         appBar: AppBar(title: const Text('BGMテスト')),
         body: Center(
