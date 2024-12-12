@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
-import '../gen/assets.gen.dart';
+import '../../gen/assets.gen.dart';
 import 'components/sounds_settings.dart';
 //import '../enums/sound_sections.dart';
 
