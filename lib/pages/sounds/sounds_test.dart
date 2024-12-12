@@ -4,7 +4,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
 import '../../gen/assets.gen.dart';
 import 'components/sounds_settings.dart';
-import 'logic/fill_bath.dart';
+import 'logic/change_speed.dart';
 import '../../enums/sound_sections.dart';
 
 class SoundsTest extends HookWidget {
