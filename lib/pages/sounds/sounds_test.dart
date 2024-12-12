@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
 import '../../gen/assets.gen.dart';
-import 'components/sounds_settings.dart';
+import 'components/se_button.dart';
 import 'logic/change_speed.dart';
 import '../../enums/sound_sections.dart';
 
