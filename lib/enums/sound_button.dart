@@ -1,4 +1,6 @@
 enum SButtonType {
-  sound1,
-  sound2;
+  low,
+  mid,
+  high,
+  above;
 }

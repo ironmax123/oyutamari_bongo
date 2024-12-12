@@ -60,6 +60,9 @@ class SoundsTest extends HookWidget {
                   audioPlayer.setSpeed(playSpeed.value);
                 },
                 child: Text('×${playSpeed.value}')),
+            const SizedBox(
+              height: 16,
+            ),
             ...SButtonType.values.map((buttonType) {
               return buttonWidget(buttonType, audioPlayer2);
             }).toList(),

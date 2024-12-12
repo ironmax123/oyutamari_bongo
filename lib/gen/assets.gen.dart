@@ -19,8 +19,14 @@ class $AssetsSoundsGen {
   /// File path: assets/sounds/se2.mp3
   String get se2 => 'assets/sounds/se2.mp3';
 
+  /// File path: assets/sounds/se3.mp3
+  String get se3 => 'assets/sounds/se3.mp3';
+
+  /// File path: assets/sounds/se4.mp3
+  String get se4 => 'assets/sounds/se4.mp3';
+
   /// List of all assets
-  List<String> get values => [audio, se1, se2];
+  List<String> get values => [audio, se1, se2, se3, se4];
 }
 
 class Assets {

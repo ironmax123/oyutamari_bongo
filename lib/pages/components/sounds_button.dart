@@ -5,13 +5,15 @@ import '../../enums/sound_button.dart';
 import '../../enums/button_text.dart';
 
 /// ボタンウィジェット
-Widget buttonWidget(SButtonType buttonType, AudioPlayer audioPlayer) {
+Widget buttonWidget(SButtonType buttonType, AudioPlayer audioPlayer2) {
   return ElevatedButton(
     onPressed: () async {
       try {
-        // 音声ファイルを設定して再生
-        await audioPlayer.setAsset(buttonType.soundPath);
-        await audioPlayer.play();
+        for (String path in buttonType.soundPaths) {
+          final audioPlayer = AudioPlayer();
+          await audioPlayer.setAsset(path);
+          audioPlayer.play();
+        }
       } catch (e) {
         debugPrint('Error playing sound: $e');
       }
