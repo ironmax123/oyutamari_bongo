@@ -13,7 +13,6 @@ class SoundsTest extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final audioPlayer = useMemoized(() => AudioPlayer());
-    final audioPlayer2 = useMemoized(() => AudioPlayer());
     final isPlaying = useState(false);
     Future<void> setupSessionAndLoadAudio() async {
       try {
@@ -64,7 +63,7 @@ class SoundsTest extends HookWidget {
               height: 16,
             ),
             ...SButtonType.values.map((buttonType) {
-              return buttonWidget(buttonType, audioPlayer2);
+              return buttonWidget(buttonType, audioPlayer);
             }).toList(),
           ],
         )));

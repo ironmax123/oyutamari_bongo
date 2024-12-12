@@ -32,4 +32,17 @@ extension SButtonTypeExt on SButtonType {
         ];
     }
   }
+
+  double get soundSpeed {
+    switch (this) {
+      case SButtonType.low:
+        return 1;
+      case SButtonType.mid:
+        return 1.5;
+      case SButtonType.high:
+        return 2;
+      case SButtonType.above:
+        return 3;
+    }
+  }
 }
