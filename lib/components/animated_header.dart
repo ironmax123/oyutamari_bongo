@@ -33,7 +33,7 @@ class _AnimatedHeaderState extends State<AnimatedHeader>
     return FadeTransition(
       opacity: _animation,
       child: Container(
-        height: 200,
+        height: 350,
         color: Colors.blue,
         child: const Center(
           child: Text(
