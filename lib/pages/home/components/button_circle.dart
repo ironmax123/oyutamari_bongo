@@ -40,14 +40,6 @@ class ButtonCircle extends StatelessWidget {
             // ボタン3の処理
           },
         ),
-        ImageButton(
-          imagePath: 'assets/images/button3.png',
-          width: 100,
-          height: 100,
-          onPressed: () {
-            // ボタン3の処理
-          },
-        ),
       ],
     );
   }
