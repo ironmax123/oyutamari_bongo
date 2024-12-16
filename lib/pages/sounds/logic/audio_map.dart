@@ -17,7 +17,7 @@ class AudioMap {
     SoundButton(id: 'se1', name: 'ドン！', soundPath: Assets.sounds.se1),
     SoundButton(id: 'se2', name: 'パフッ！', soundPath: Assets.sounds.se2),
     SoundButton(id: 'se3', name: 'ピー', soundPath: Assets.sounds.se3),
-    SoundButton(id: 'se4', name: 'ドォオン', soundPath: Assets.sounds.se4),
+    SoundButton(id: 'se4', name: 'ブォオン', soundPath: Assets.sounds.se4),
   ];
 
   static SoundButton? getButtonById(String id) {
