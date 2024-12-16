@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components1.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components2.dart';
+import 'package:oyutamaribondo/pages/home/components/button_full.dart';
+import 'package:oyutamaribondo/pages/home/components/button_oi.dart';
 import 'package:oyutamaribondo/pages/home/components/button_updown.dart';
 import 'package:oyutamaribondo/pages/home/components/button_circle.dart';
 import 'package:oyutamaribondo/components/animated_header.dart';
@@ -62,14 +64,16 @@ class HomePage extends StatelessWidget {
                                     },
                                   ),
                                 ),
-                                
+                                Expanded(
+                                  child: ButtonOi(),
+                                ),
                                 Expanded(
                                   child: ImageButton(
-                                    imagePath: 'assets/images/button1.png',
+                                    imagePath: 'assets/images/button9.png',
                                     width: 100,
                                     height: 100,
                                     onPressed: () {
-                                      // ボタン10の処理
+                                      // ボタン9の処理
                                     },
                                   ),
                                 ),
@@ -78,24 +82,7 @@ class HomePage extends StatelessWidget {
                             Row(
                               children: [
                                 Expanded(
-                                  child: ImageButton(
-                                    imagePath: 'assets/images/button3.png',
-                                    width: 100,
-                                    height: 100,
-                                    onPressed: () {
-                                      // ボタン3の処理
-                                    },
-                                  ),
-                                ),
-                                Expanded(
-                                  child: ImageButton(
-                                    imagePath: 'assets/images/button4.png',
-                                    width: 100,
-                                    height: 100,
-                                    onPressed: () {
-                                      // ボタン4の処理
-                                    },
-                                  ),
+                                  child: ButtonFull(),
                                 ),
                               ],
                             ),
