@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/components/animated_header.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
-import 'package:oyutamaribondo/pages/home_page.dart';
+import 'package:oyutamaribondo/pages/home/home_page.dart';
 import 'package:oyutamaribondo/pages/sounds_test.dart';
 
 void main() async {
