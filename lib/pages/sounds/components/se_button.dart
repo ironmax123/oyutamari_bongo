@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
-Widget buttonWidget(Map<String, dynamic> mapData) {
+import '../logic/audio_map.dart';
+
+Widget soundButtonWidget(AudioPlayer audioPlayer) {
   return Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: mapData.entries.map<Widget>((entry) {
-      // <Widget> 型を明示
+    children: AudioMap.buttons.map((button) {
       return ElevatedButton(
         onPressed: () async {
-          try {
-            final subPlayer = AudioPlayer();
-            await subPlayer.setAsset(entry.value);
-            subPlayer.play();
-          } catch (e) {
-            debugPrint('Error playing sound: $e');
-          }
+          await audioPlayer.setAsset(button.soundPath);
+          await audioPlayer.play();
         },
-        child: Text(entry.key), // ボタンには key を表示
+        child: Text(button.name),
       );
-    }).toList(), // 明示的に List<Widget> に変換
+    }).toList(),
   );
 }

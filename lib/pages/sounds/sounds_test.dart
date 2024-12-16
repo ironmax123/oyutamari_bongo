@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
-import '/pages/sounds/logic/audio_map.dart';
+//import '/pages/sounds/logic/audio_map.dart';
 import '../../gen/assets.gen.dart';
 import 'components/se_button.dart';
 import 'logic/change_speed.dart';
@@ -13,9 +13,9 @@ class SoundsTest extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final mainPlayer = useMemoized(() => AudioPlayer());
-    //final subPlayer = useMemoized(() => AudioPlayer());
-    final audioMap = useMemoized(() => AudioMap());
-    final mapData = useMemoized(() => audioMap.getidPath());
+    final subPlayer = useMemoized(() => AudioPlayer());
+    //final audioMap = useMemoized(() => AudioMap());
+    //final mapData = useMemoized(() => audioMap.getidPath());
     final setting = useMemoized(() => SoundsSettings());
     final isPlaying = useState(false);
     final filldNum = useState(0.0); //ラズパイの送信された数値の変数
@@ -61,7 +61,8 @@ class SoundsTest extends HookWidget {
               },
               iconSize: 128,
             ),
-            buttonWidget(mapData),
+            //buttonWidget(mapData),
+            soundButtonWidget(subPlayer),
             const SizedBox(
               height: 16,
             ),
