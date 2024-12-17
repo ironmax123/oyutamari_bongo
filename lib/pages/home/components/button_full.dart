@@ -26,14 +26,6 @@ class ButtonFull extends StatelessWidget {
                 // ボタン7の処理
               },
             ),
-            ImageButton(
-              imagePath: 'assets/images/button9.png',
-              width: 100,
-              height: 50,
-              onPressed: () {
-                // ボタン7の処理
-              },
-            ),
           ],
         ),
         Row(
@@ -48,14 +40,6 @@ class ButtonFull extends StatelessWidget {
             ),
             ImageButton(
               imagePath: 'assets/images/button2.png',
-              width: 100,
-              height: 50,
-              onPressed: () {
-                // ボタン7の処理
-              },
-            ),
-            ImageButton(
-              imagePath: 'assets/images/button9.png',
               width: 100,
               height: 50,
               onPressed: () {

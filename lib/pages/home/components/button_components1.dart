@@ -8,13 +8,8 @@ class Buttoncomponents1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        ImageButton(
-          imagePath: 'assets/images/button4.png',
-          width: 100,
-          height: 100,
-          onPressed: () {
-            // ボタン4の処理
-          },
+        SizedBox(
+          width: 16,
         ),
         ImageButton(
           imagePath: 'assets/images/button4.png',
@@ -23,6 +18,20 @@ class Buttoncomponents1 extends StatelessWidget {
           onPressed: () {
             // ボタン4の処理
           },
+        ),
+        SizedBox(
+          width: 16,
+        ),
+        ImageButton(
+          imagePath: 'assets/images/button4.png',
+          width: 100,
+          height: 100,
+          onPressed: () {
+            // ボタン4の処理
+          },
+        ),
+        SizedBox(
+          width: 16,
         ),
       ],
     );

@@ -16,12 +16,15 @@ class ImageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: Image.asset(
-        imagePath,
-        width: width,
-        height: height,
+    return Container(
+      color: Colors.amber,
+      child: GestureDetector(
+        onTap: onPressed,
+        child: Image.asset(
+          imagePath,
+          width: width,
+          height: height,
+        ),
       ),
     );
   }

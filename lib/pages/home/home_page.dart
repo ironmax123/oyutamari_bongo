@@ -26,74 +26,52 @@ class HomePage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Expanded(child: Buttoncomponents1()),
-                      Expanded(child: Buttoncomponents2()),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: ImageButton(
-                                    imagePath: 'assets/images/button8.png',
-                                    width: 100,
-                                    height: 100,
-                                    onPressed: () {
-                                      // ボタン8の処理
-                                    },
-                                  ),
-                                ),
-                                Expanded(
-                                  child: ButtonUpdown(),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: ImageButton(
-                                    imagePath: 'assets/images/button5.png',
-                                    width: 100,
-                                    height: 100,
-                                    onPressed: () {
-                                      // ボタン9の処理
-                                    },
-                                  ),
-                                ),
-                                Expanded(
-                                  child: ButtonOi(),
-                                ),
-                                Expanded(
-                                  child: ImageButton(
-                                    imagePath: 'assets/images/button9.png',
-                                    width: 100,
-                                    height: 100,
-                                    onPressed: () {
-                                      // ボタン9の処理
-                                    },
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: ButtonFull(),
-                                ),
-                              ],
-                            ),
-                          ],
+                      Buttoncomponents1(),
+                      SizedBox(
+                        height: 100,
+                        child: VerticalDivider(
+                          color: Colors.black,
+                          thickness: 2,
+                          width: 20,
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: ButtonCircle(),
-                      ),
+                      Buttoncomponents2(),
                     ],
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            ImageButton(
+                              imagePath: 'assets/images/button8.png',
+                              width: 150,
+                              height: 150,
+                              onPressed: () {
+                                // ボタン8の処理
+                              },
+                            ),
+                            Row(
+                              children: [
+                                ImageButton(
+                                  imagePath: 'assets/images/button5.png',
+                                  width: 150,
+                                  height: 150,
+                                  onPressed: () {
+                                    // ボタン8の処理
+                                  },
+                                ),
+                                ButtonOi(),
+                              ],
+                            ),
+                            ButtonFull(),
+                          ],
+                        ),
+                        Expanded(child: ButtonUpdown()),
+                        ButtonCircle(),
+                      ],
+                    ),
                   ),
                 ],
               ),
