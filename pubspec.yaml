@@ -16,6 +16,12 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_hooks: ^0.20.5
   flutter_blue_plus: ^1.34.5
+  hooks_riverpod: ^2.6.1
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  riverpod_annotation: ^2.6.1
+  freezed: ^2.5.7
+  riverpod_generator: ^2.6.3
 
 dev_dependencies:
   flutter_test:
