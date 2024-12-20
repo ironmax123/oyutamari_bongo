@@ -27,4 +27,19 @@ class AudioMap {
   static List<String> getAllPaths() {
     return buttons.map((button) => button.soundPath).toList();
   }
+
+  static String? getPathById(String id) {
+    switch (id) {
+      case 'se1':
+        return Assets.sounds.se1;
+      case 'se2':
+        return Assets.sounds.se2;
+      case 'se3':
+        return Assets.sounds.se3;
+      case 'se4':
+        return Assets.sounds.se4;
+      default:
+        return null;
+    }
+  }
 }
