@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class BleScanPage extends HookWidget {
   const BleScanPage({super.key});
@@ -70,13 +71,20 @@ class BleScanPage extends HookWidget {
     }, []);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Temperature Monitor"),
-      ),
       body: Center(
         child: connectedDevice.value == null
             ? isScanning.value
-                ? const Text("Scanning for device...")
+                ? const Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SpinKitDoubleBounce(
+                        color: Colors.orange,
+                        size: 150.0,
+                      ),
+                      SizedBox(height: 24),
+                      Text("端末を探しています"),
+                    ],
+                  )
                 : ElevatedButton(
                     onPressed: startScan,
                     child: const Text("Retry Scan"),
@@ -94,7 +102,7 @@ class BleScanPage extends HookWidget {
                     style: const TextStyle(fontSize: 32),
                   ),
                 ],
-              ),
+              ), //TODO:Home画面に置き換え
       ),
     );
   }

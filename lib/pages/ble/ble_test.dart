@@ -15,7 +15,7 @@ class LoadBlePage extends HookWidget {
     // Determine which screen to show based on the adapter state
     final Widget screen = adapterState.data == BluetoothAdapterState.on
         ? const BleScanPage()
-        : Text('Adapter state: ${adapterState.data}');//TODO:Home画面に置き換え
+        : Text('Adapter state: ${adapterState.data}');
 
     return Scaffold(
       body: Center(child: screen),
