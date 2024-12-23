@@ -74,6 +74,7 @@ class HomePage extends StatelessWidget {
                                     // ボタン8の処理
                                   },
                                 ),
+                                SizedBox(width: 10), // 変更箇所: 空白を追加
                                 ButtonOi(),
                               ],
                             ),
