@@ -37,10 +37,12 @@ class HomePage extends StatelessWidget {
                         child: VerticalDivider(
                           color: Colors.black,
                           thickness: 5,
-                          width: 20,
+                          width: 10,
                         ),
                       ),
-                      Buttoncomponents2(),
+                      Expanded(
+                        child: Buttoncomponents2(),
+                      ),
                     ],
                   ),
                   Divider(
