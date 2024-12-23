@@ -24,6 +24,11 @@ class HomePage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  Divider(
+                    color: Colors.black,
+                    thickness: 5,
+                    height: 5,
+                  ),
                   Row(
                     children: [
                       Buttoncomponents1(),
@@ -31,12 +36,17 @@ class HomePage extends StatelessWidget {
                         height: 100,
                         child: VerticalDivider(
                           color: Colors.black,
-                          thickness: 2,
+                          thickness: 5,
                           width: 20,
                         ),
                       ),
                       Buttoncomponents2(),
                     ],
+                  ),
+                  Divider(
+                    color: Colors.black,
+                    thickness: 5,
+                    height: 5,
                   ),
                   SizedBox(
                     width: double.infinity,
@@ -56,8 +66,8 @@ class HomePage extends StatelessWidget {
                               children: [
                                 ImageButton(
                                   imagePath: 'assets/images/button5.png',
-                                  width: 150,
-                                  height: 150,
+                                  width: 100,
+                                  height: 100,
                                   onPressed: () {
                                     // ボタン8の処理
                                   },
@@ -68,7 +78,7 @@ class HomePage extends StatelessWidget {
                             ButtonFull(),
                           ],
                         ),
-                        Expanded(child: ButtonUpdown()),
+                        ButtonUpdown(),
                         ButtonCircle(),
                       ],
                     ),

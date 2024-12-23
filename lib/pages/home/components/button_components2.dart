@@ -16,6 +16,11 @@ class Buttoncomponents2 extends StatelessWidget {
             // ボタン6の処理
           },
         ),
+        Divider(
+          color: Colors.black,
+          thickness: 1,
+          height: 1,
+        ),
         ImageButton(
           imagePath: 'assets/images/button6.png',
           width: 100,
