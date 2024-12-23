@@ -10,16 +10,14 @@ class SoundsTest extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final subPlayer = useMemoized(() => AudioPlayer());
-    //final audioMap = useMemoized(() => AudioMap());
-    //final mapData = useMemoized(() => audioMap.getidPath());
-    final setUp = useMemoized(() => PlayAudio());
+    final sePlayer = useMemoized(() => AudioPlayer());
+    final playAudio = useMemoized(() => PlayAudio());
     final isPlaying = useState(false);
     final filldNum = useState(0.0); //ラズパイの送信された数値の変数
     useEffect(() {
-      setUp.setupSessionAndLoadAudio(Assets.sounds.audio);
-      return () => setUp.dispose();
-    }, []);
+      playAudio.setupSessionAndLoadAudio(Assets.sounds.audio);
+      return () => playAudio.dispose();
+    }, [playAudio.player]);
     return Scaffold(
         appBar: AppBar(title: const Text('BGMテスト')),
         body: Center(
@@ -31,11 +29,11 @@ class SoundsTest extends HookWidget {
               onPressed: () async {
                 isPlaying.value = !isPlaying.value;
                 if (isPlaying.value) {
-                  setUp.play(
+                  playAudio.play(
                     filldNum.value,
                   );
                 } else {
-                  setUp.stop(
+                  playAudio.stop(
                     filldNum.value,
                   );
                 }
@@ -43,10 +41,10 @@ class SoundsTest extends HookWidget {
               iconSize: 128,
             ),
             //buttonWidget(mapData),
-            soundButtonWidget(subPlayer),
             const SizedBox(
               height: 16,
             ),
+            soundButtonWidget(sePlayer),
             /*...SButtonType.values.map((buttonType) {
               return buttonWidget(buttonType, subPlayer);
             }).toList(),*/
