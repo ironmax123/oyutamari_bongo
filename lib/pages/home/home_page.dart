@@ -58,8 +58,8 @@ class HomePage extends StatelessWidget {
                           children: [
                             ImageButton(
                               imagePath: 'assets/images/button8.png',
-                              width: 150,
-                              height: 150,
+                              width: 200,
+                              height: 110,
                               onPressed: () {
                                 // ボタン8の処理
                               },
