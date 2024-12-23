@@ -80,7 +80,9 @@ class HomePage extends StatelessWidget {
                             ButtonFull(),
                           ],
                         ),
-                        ButtonUpdown(),
+                        Expanded(
+                          child: ButtonUpdown(),
+                        ),
                         ButtonCircle(),
                       ],
                     ),
