@@ -6,36 +6,37 @@ class ButtonCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double buttonSize = 80;
     return Column(
       children: [
         ImageButton(
           imagePath: 'assets/images/button3.png',
-          width: 100,
-          height: 50,
+          width: buttonSize,
+          height: buttonSize,
           onPressed: () {
             // ボタン3の処理
           },
         ),
         ImageButton(
           imagePath: 'assets/images/button3.png',
-          width: 100,
-          height: 100,
+          width: buttonSize,
+          height: buttonSize,
           onPressed: () {
             // ボタン3の処理
           },
         ),
         ImageButton(
           imagePath: 'assets/images/button3.png',
-          width: 100,
-          height: 100,
+          width: buttonSize,
+          height: buttonSize,
           onPressed: () {
             // ボタン3の処理
           },
         ),
         ImageButton(
           imagePath: 'assets/images/button3.png',
-          width: 100,
-          height: 100,
+          width: buttonSize,
+          height: buttonSize,
           onPressed: () {
             // ボタン3の処理
           },
