@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:oyutamaribondo/state.dart';
+import '/state.dart';
 
 part 'view_model.g.dart';
 
@@ -7,6 +7,12 @@ part 'view_model.g.dart';
 class HomePageVM extends _$HomePageVM {
   @override
   Future<HomePageState> build() async {
-    return const HomePageState(test: 'test');
+    return const HomePageState(filldNum: 0.0);
+  }
+
+  void updateFilldNum(double? newFilldNum) {
+    if (newFilldNum != null) {
+      state = AsyncValue.data(state.value!.copyWith(filldNum: newFilldNum));
+    }
   }
 }

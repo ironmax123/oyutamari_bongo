@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomePageState {
-  String get test => throw _privateConstructorUsedError;
+  double get filldNum => throw _privateConstructorUsedError;
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.
@@ -31,7 +31,7 @@ abstract class $HomePageStateCopyWith<$Res> {
           HomePageState value, $Res Function(HomePageState) then) =
       _$HomePageStateCopyWithImpl<$Res, HomePageState>;
   @useResult
-  $Res call({String test});
+  $Res call({double filldNum});
 }
 
 /// @nodoc
@@ -49,13 +49,13 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? test = null,
+    Object? filldNum = null,
   }) {
     return _then(_value.copyWith(
-      test: null == test
-          ? _value.test
-          : test // ignore: cast_nullable_to_non_nullable
-              as String,
+      filldNum: null == filldNum
+          ? _value.filldNum
+          : filldNum // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -68,7 +68,7 @@ abstract class _$$HomePageStateImplCopyWith<$Res>
       __$$HomePageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String test});
+  $Res call({double filldNum});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? test = null,
+    Object? filldNum = null,
   }) {
     return _then(_$HomePageStateImpl(
-      test: null == test
-          ? _value.test
-          : test // ignore: cast_nullable_to_non_nullable
-              as String,
+      filldNum: null == filldNum
+          ? _value.filldNum
+          : filldNum // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -98,14 +98,14 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomePageStateImpl implements _HomePageState {
-  const _$HomePageStateImpl({required this.test});
+  const _$HomePageStateImpl({required this.filldNum});
 
   @override
-  final String test;
+  final double filldNum;
 
   @override
   String toString() {
-    return 'HomePageState(test: $test)';
+    return 'HomePageState(filldNum: $filldNum)';
   }
 
   @override
@@ -113,11 +113,12 @@ class _$HomePageStateImpl implements _HomePageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomePageStateImpl &&
-            (identical(other.test, test) || other.test == test));
+            (identical(other.filldNum, filldNum) ||
+                other.filldNum == filldNum));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, test);
+  int get hashCode => Object.hash(runtimeType, filldNum);
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.
@@ -129,11 +130,11 @@ class _$HomePageStateImpl implements _HomePageState {
 }
 
 abstract class _HomePageState implements HomePageState {
-  const factory _HomePageState({required final String test}) =
+  const factory _HomePageState({required final double filldNum}) =
       _$HomePageStateImpl;
 
   @override
-  String get test;
+  double get filldNum;
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.

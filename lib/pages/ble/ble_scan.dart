@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:oyutamaribondo/view_model.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class BleScanPage extends HookWidget {
+class BleScanPage extends HookConsumerWidget {
   const BleScanPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     // スキャン中の状態を管理
     final isScanning = useState(false);
 
@@ -16,6 +18,7 @@ class BleScanPage extends HookWidget {
 
     // 気温データの状態を管理
     final temperature = useState<String>("Waiting...");
+    //mock
 
     // スキャンを開始する関数
     void startScan() {
@@ -41,6 +44,10 @@ class BleScanPage extends HookWidget {
             characteristic.lastValueStream.listen((value) {
               final temp = String.fromCharCodes(value);
               temperature.value = "$temp°C";
+              // ViewModelのfilldNumを更新
+              ref
+                  .read(homePageVMProvider.notifier)
+                  .updateFilldNum(double.tryParse(temp) ?? 0.0);
             });
           }
         }
