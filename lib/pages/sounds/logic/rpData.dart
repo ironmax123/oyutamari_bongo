@@ -5,8 +5,8 @@ import 'package:oyutamaribondo/view_model.dart';
 
 class MockDevice {
   Timer? _timer; // タイマーの状態
-  String len = "20cm"; // 初期値
-  double mocklen = 20.0; // モックデータの初期値
+  String lengthcm = "20cm"; // 初期値
+  double len = 20.0; // モックデータの初期値
   final setting = SoundsSettings();
 
   // モックデータの接続シミュレーション
@@ -16,17 +16,17 @@ class MockDevice {
 
     // 新規タイマーを開始
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      mocklen += 1.5;
+      len += 1.5;
       setting.settings(
-        mocklen,
+        len,
         mainPlayer,
       );
 
-      len = "${mocklen}cm";
+      lengthcm = "${len}cm";
 
       // Riverpod状態を更新
-      ref.read(homePageVMProvider.notifier).updateFilldNum(mocklen);
-      if (mocklen >= 100) {
+      ref.read(homePageVMProvider.notifier).updateFilldNum(len);
+      if (len >= 100) {
         timer.cancel();
       }
     });
