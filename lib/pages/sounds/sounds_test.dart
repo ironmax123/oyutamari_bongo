@@ -15,7 +15,7 @@ class SoundsTest extends HookWidget {
     final isPlaying = useState(false);
     final filldNum = useState(0.0); //ラズパイの送信された数値の変数
     useEffect(() {
-      playAudio.setupSessionAndLoadAudio(Assets.sounds.audio);
+      playAudio.setPath();
       return () => playAudio.dispose();
     }, [playAudio.player]);
     return Scaffold(
