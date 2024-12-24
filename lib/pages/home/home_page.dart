@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: [
                   Divider(
-                    color: Colors.black,
+                    color: Colors.grey,
                     thickness: 5,
                     height: 5,
                   ),
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                       SizedBox(
                         height: 100,
                         child: VerticalDivider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           thickness: 5,
                           width: 10,
                         ),
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   Divider(
-                    color: Colors.black,
+                    color: Colors.grey,
                     thickness: 5,
                     height: 5,
                   ),

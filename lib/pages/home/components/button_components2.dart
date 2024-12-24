@@ -17,7 +17,7 @@ class Buttoncomponents2 extends StatelessWidget {
           },
         ),
         Divider(
-          color: Colors.black,
+          color: Colors.grey,
           thickness: 3,
           height: 3,
         ),
