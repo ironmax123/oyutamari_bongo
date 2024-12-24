@@ -3,8 +3,8 @@ import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:oyutamaribondo/pages/ble/ble_scan.dart';
 
-class BleTestPage extends HookWidget {
-  const BleTestPage({super.key});
+class LoadBlePage extends HookWidget {
+  const LoadBlePage({super.key});
 
   @override
   Widget build(BuildContext context) {
