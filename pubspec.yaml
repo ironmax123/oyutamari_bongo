@@ -33,5 +33,17 @@ dev_dependencies:
 
 flutter:
   assets:
+    - assets/sounds/audio.mp3
+    - assets/sounds/se1.mp3
+    - assets/images/button1.png
+    - assets/images/button2.png
+    - assets/images/button3.png
+    - assets/images/button4.png
+    - assets/images/button5.png
+    - assets/images/button6.png
+    - assets/images/button7.png
+    - assets/images/button8.png
+    - assets/images/button9.png  
+    - assets/images/danger_image.png
     - assets/sounds/
   uses-material-design: true
