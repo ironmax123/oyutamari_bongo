@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomePageState {
-  String get test => throw _privateConstructorUsedError;
+  List<SE> get seList => throw _privateConstructorUsedError;
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.
@@ -31,7 +31,7 @@ abstract class $HomePageStateCopyWith<$Res> {
           HomePageState value, $Res Function(HomePageState) then) =
       _$HomePageStateCopyWithImpl<$Res, HomePageState>;
   @useResult
-  $Res call({String test});
+  $Res call({List<SE> seList});
 }
 
 /// @nodoc
@@ -49,13 +49,13 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? test = null,
+    Object? seList = null,
   }) {
     return _then(_value.copyWith(
-      test: null == test
-          ? _value.test
-          : test // ignore: cast_nullable_to_non_nullable
-              as String,
+      seList: null == seList
+          ? _value.seList
+          : seList // ignore: cast_nullable_to_non_nullable
+              as List<SE>,
     ) as $Val);
   }
 }
@@ -68,7 +68,7 @@ abstract class _$$HomePageStateImplCopyWith<$Res>
       __$$HomePageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String test});
+  $Res call({List<SE> seList});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? test = null,
+    Object? seList = null,
   }) {
     return _then(_$HomePageStateImpl(
-      test: null == test
-          ? _value.test
-          : test // ignore: cast_nullable_to_non_nullable
-              as String,
+      seList: null == seList
+          ? _value._seList
+          : seList // ignore: cast_nullable_to_non_nullable
+              as List<SE>,
     ));
   }
 }
@@ -98,15 +98,20 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomePageStateImpl implements _HomePageState {
-  const _$HomePageStateImpl({required this.test});
+  const _$HomePageStateImpl({required final List<SE> seList})
+      : _seList = seList;
 
   final List<SE> _seList;
   @override
-  final String test;
+  List<SE> get seList {
+    if (_seList is EqualUnmodifiableListView) return _seList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_seList);
+  }
 
   @override
   String toString() {
-    return 'HomePageState(test: $test)';
+    return 'HomePageState(seList: $seList)';
   }
 
   @override
@@ -114,11 +119,12 @@ class _$HomePageStateImpl implements _HomePageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomePageStateImpl &&
-            (identical(other.test, test) || other.test == test));
+            const DeepCollectionEquality().equals(other._seList, _seList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, test);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_seList));
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.
@@ -130,11 +136,11 @@ class _$HomePageStateImpl implements _HomePageState {
 }
 
 abstract class _HomePageState implements HomePageState {
-  const factory _HomePageState({required final String test}) =
+  const factory _HomePageState({required final List<SE> seList}) =
       _$HomePageStateImpl;
 
   @override
-  String get test;
+  List<SE> get seList;
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.

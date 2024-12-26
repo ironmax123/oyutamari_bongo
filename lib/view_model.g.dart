@@ -6,7 +6,37 @@ part of 'view_model.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homePageVMHash() => r'292b79e36b116cb64e27db542e4198060d7c96a0';
+String _$homePageVMHash() => r'e2128c9feae852eac647fdce5aaf0945f1a562dd';
+
+/// Copied from Dart SDK
+class _SystemHash {
+  _SystemHash._();
+
+  static int combine(int hash, int value) {
+    // ignore: parameter_assignments
+    hash = 0x1fffffff & (hash + value);
+    // ignore: parameter_assignments
+    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
+    return hash ^ (hash >> 6);
+  }
+
+  static int finish(int hash) {
+    // ignore: parameter_assignments
+    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
+    // ignore: parameter_assignments
+    hash = hash ^ (hash >> 11);
+    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
+  }
+}
+
+abstract class _$HomePageVM
+    extends BuildlessAutoDisposeAsyncNotifier<HomePageState> {
+  late final AudioPlayer audioPlayer;
+
+  FutureOr<HomePageState> build(
+    AudioPlayer audioPlayer,
+  );
+}
 
 /// See also [HomePageVM].
 @ProviderFor(HomePageVM)

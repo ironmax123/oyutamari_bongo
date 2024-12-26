@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:oyutamaribondo/pages/sounds/logic/change_speed.dart';
-import 'package:oyutamaribondo/view_model.dart';
+import 'package:oyutamaribondo/sectionVM.dart';
 import 'package:rive/rive.dart';
 import '../enums/animation_path.dart'; // 変更箇所: AnimationPath をインポート
 
@@ -16,7 +16,7 @@ class AnimatedHeader extends HookConsumerWidget {
     SoundsSettings setting = SoundsSettings();
     final paths = useState<String>(AnimationPath.first.path);
 
-    final filldNum = ref.watch(homePageVMProvider).when(
+    final filldNum = ref.watch(sectionPageVMProvider).when(
           data: (data) => data.filldNum,
           loading: () => 0.0,
           error: (err, stack) {

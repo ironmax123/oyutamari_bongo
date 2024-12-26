@@ -5,9 +5,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/pages/home/home_page.dart';
+import 'package:oyutamaribondo/sectionVM.dart';
 
 //import '../sounds/sound_rp.dart';
-import '../../view_model.dart';
 import '../sounds/logic/change_speed.dart';
 import '../sounds/logic/play.dart';
 
@@ -57,7 +57,9 @@ class BleScanPage extends HookConsumerWidget {
 
               // ViewModelのfilldNumを更新
               double parsedTemp = double.tryParse(temp) ?? 0.0;
-              ref.read(homePageVMProvider.notifier).updateFilldNum(parsedTemp);
+              ref
+                  .read(sectionPageVMProvider.notifier)
+                  .updateFilldNum(parsedTemp);
             });
           }
         }
@@ -65,7 +67,7 @@ class BleScanPage extends HookConsumerWidget {
     }
 
 // filldNumを監視して設定を変更
-    final filldNum = ref.watch(homePageVMProvider).when(
+    final filldNum = ref.watch(sectionPageVMProvider).when(
           data: (data) => data.filldNum,
           loading: () => 0.0,
           error: (err, stack) {

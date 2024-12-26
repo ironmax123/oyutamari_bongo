@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/pages/sounds/logic/play.dart';
 import 'package:oyutamaribondo/pages/sounds/logic/rpData.dart';
-import 'package:oyutamaribondo/view_model.dart';
+import 'package:oyutamaribondo/sectionVM.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SoundsRp extends HookConsumerWidget {
@@ -14,7 +14,7 @@ class SoundsRp extends HookConsumerWidget {
     final device = useMemoized(() => MockDevice());
     final mainPlayer = useMemoized(() => AudioPlayer());
     final playAudio = useMemoized(() => PlayAudio());
-    final filldNum = ref.watch(homePageVMProvider).when(
+    final filldNum = ref.watch(sectionPageVMProvider).when(
           data: (data) => data.filldNum,
           loading: () => 0.0, // デフォルト値
           error: (err, stack) {
