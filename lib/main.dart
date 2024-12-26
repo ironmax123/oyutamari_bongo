@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         title: 'お湯たまりボンゴ',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          fontFamily: 'DotGothic',
         ),
         home: const HomePage());
   }

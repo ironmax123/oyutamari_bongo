@@ -40,5 +40,14 @@ flutter:
     - assets/animation/
     - assets/sounds/
     - assets/bgm/
+    - assets/fonts/
     - assets/images/
+
+  fonts:
+   - family: DotGothic
+     fonts:
+       - asset: assets/fonts/dot_gothic/DotGothic16-Regular.ttf
+
   uses-material-design: true
+
+
