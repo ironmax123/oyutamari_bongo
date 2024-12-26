@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oyutamaribondo/enums/animation_path.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components1.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components2.dart';
 import 'package:oyutamaribondo/pages/home/components/button_full.dart';
@@ -17,7 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _keyAnimatedHeaderWidget = GlobalKey<AnimatedHeaderState>();
+  final _keyAnimatedHeaderWidget = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
