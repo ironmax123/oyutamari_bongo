@@ -31,9 +31,9 @@ class AnimatedHeader extends HookConsumerWidget {
         debugPrint('path:${paths.value}');
       }
 
-      updatePath(); // 非同期関数を呼び出し
+      updatePath();
       return null; // クリーンアップ不要
-    }, [filldNum]); // 依存関係を設定
+    }, [filldNum]);
     // アニメーションパス切り替え関数
     /*void toggleAnimation() {
       animationPath.value = animationPath.value == AnimationPath.second
