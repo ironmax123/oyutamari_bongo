@@ -5,17 +5,17 @@ import '../../../enums/sound_enum.dart';
 
 class FillBath {
   Sections filled(double ratio) {
-    if (ratio < 25) {
+    if (ratio >= 75) {
       return Sections.low;
-    } else if (ratio >= 25 && ratio < 50) {
+    } else if (ratio >= 50) {
       return Sections.mid;
-    } else if (ratio >= 50 && ratio < 75) {
+    } else if (ratio >= 25) {
       return Sections.high;
-    } else if (ratio >= 75) {
+    } else if (ratio >= 0) {
       return Sections.above;
     } else {
       debugPrint('Invalid ratio value: $ratio');
-      return Sections.low;
+      return Sections.low; // デフォルト
     }
   }
 }

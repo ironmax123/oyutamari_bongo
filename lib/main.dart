@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:oyutamaribondo/pages/ble/ble_scan.dart';
 import 'package:oyutamaribondo/pages/ble/ble_test.dart';
-import 'package:oyutamaribondo/pages/sounds/sounds_test.dart';
+
+import 'pages/sounds/sound_rp.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +27,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const SoundsTest());
+        home: const LoadBlePage());
   }
 }

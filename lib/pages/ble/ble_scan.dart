@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:oyutamaribondo/view_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:just_audio/just_audio.dart';
+
+//import '../sounds/sound_rp.dart';
+import '../../view_model.dart';
+import '../sounds/logic/change_speed.dart';
+import '../sounds/logic/play.dart';
 
 class BleScanPage extends HookConsumerWidget {
   const BleScanPage({super.key});
@@ -12,6 +17,9 @@ class BleScanPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // スキャン中の状態を管理
     final isScanning = useState(false);
+    SoundsSettings setting = SoundsSettings();
+    final mainPlayer = useMemoized(() => AudioPlayer());
+    final playAudio = useMemoized(() => PlayAudio());
 
     // 接続されたデバイスと特性を管理
     final connectedDevice = useState<BluetoothDevice?>(null);
@@ -45,15 +53,31 @@ class BleScanPage extends HookConsumerWidget {
             characteristic.lastValueStream.listen((value) {
               final temp = String.fromCharCodes(value);
               temperature.value = "$temp°C";
+
               // ViewModelのfilldNumを更新
-              ref
-                  .read(homePageVMProvider.notifier)
-                  .updateFilldNum(double.tryParse(temp) ?? 0.0);
+              double parsedTemp = double.tryParse(temp) ?? 0.0;
+              ref.read(homePageVMProvider.notifier).updateFilldNum(parsedTemp);
             });
           }
         }
       }
     }
+
+// filldNumを監視して設定を変更
+    final filldNum = ref.watch(homePageVMProvider).when(
+          data: (data) => data.filldNum,
+          loading: () => 0.0,
+          error: (err, stack) {
+            debugPrint('エラー: $err');
+            return 0.0;
+          },
+        );
+
+// filldNumの変化に合わせて設定を更新
+    useEffect(() {
+      setting.settings(filldNum, mainPlayer);
+      return null; // クリーンアップ不要
+    }, [filldNum]);
 
     // スキャン結果をリッスン
     useEffect(() {
@@ -67,7 +91,7 @@ class BleScanPage extends HookConsumerWidget {
           }
         }
       });
-
+      playAudio.setPath(mainPlayer);
       return subscription.cancel;
     }, []);
 
@@ -96,7 +120,8 @@ class BleScanPage extends HookConsumerWidget {
                     onPressed: startScan,
                     child: const Text("Retry Scan"),
                   )
-            : Column(
+            : //const SoundsRp()
+            Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(

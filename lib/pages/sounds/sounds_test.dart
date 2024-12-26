@@ -14,7 +14,7 @@ class SoundsTest extends HookWidget {
     final isPlaying = useState(false);
     final filldNum = useState(0.0); //ラズパイの送信された数値の変数
     useEffect(() {
-      playAudio.setPath();
+      // playAudio.setPath();
       return () => playAudio.dispose();
     }, [playAudio.player]);
     return Scaffold(
@@ -28,9 +28,6 @@ class SoundsTest extends HookWidget {
               onPressed: () async {
                 isPlaying.value = !isPlaying.value;
                 if (isPlaying.value) {
-                  playAudio.play(
-                    filldNum.value,
-                  );
                 } else {
                   playAudio.stop(
                     filldNum.value,

@@ -1,10 +1,8 @@
-import 'package:audio_session/audio_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:oyutamaribondo/pages/sounds/logic/play.dart';
 import 'package:oyutamaribondo/pages/sounds/logic/rpData.dart';
-
-import '../../gen/assets.gen.dart';
 import 'package:oyutamaribondo/view_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -13,8 +11,9 @@ class SoundsRp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final mainPlayer = useMemoized(() => AudioPlayer());
     final device = useMemoized(() => MockDevice());
+    final mainPlayer = useMemoized(() => AudioPlayer());
+    final playAudio = useMemoized(() => PlayAudio());
     final filldNum = ref.watch(homePageVMProvider).when(
           data: (data) => data.filldNum,
           loading: () => 0.0, // デフォルト値
@@ -24,22 +23,8 @@ class SoundsRp extends HookConsumerWidget {
           },
         );
 
-    Future<void> setupSessionAndLoadAudio() async {
-      try {
-        final session = await AudioSession.instance;
-        await session.configure(const AudioSessionConfiguration.speech());
-        await mainPlayer.setAsset(Assets.sounds.audio);
-        mainPlayer.play();
-        mainPlayer.setLoopMode(LoopMode.one);
-        debugPrint('音声ファイルロード完了');
-      } catch (e) {
-        debugPrint('Error: $e');
-      }
-    }
-
     useEffect(() {
-      setupSessionAndLoadAudio();
-      device.mockConnectToDevice(ref, mainPlayer);
+      playAudio.setPath(mainPlayer);
       return () => device.stopMock();
     }, [mainPlayer]);
 
