@@ -1,10 +1,21 @@
 enum AnimationPath {
-  first('assets/animation/first.riv'),
-  second('assets/animation/second.riv'),
-  third('assets/animation/third.riv'),
-  fourth('assets/animation/fourth.riv');
+  first,
+  second,
+  third,
+  fourth,
+}
 
-  const AnimationPath(this.path);
-
-  final String path;
+extension AnimationPathExtension on AnimationPath {
+  String get path {
+    switch (this) {
+      case AnimationPath.first:
+        return 'assets/animation/first.riv';
+      case AnimationPath.second:
+        return 'assets/animation/second.riv';
+      case AnimationPath.third:
+        return 'assets/animation/third.riv';
+      case AnimationPath.fourth:
+        return 'assets/animation/fourth.riv';
+    }
+  }
 }
