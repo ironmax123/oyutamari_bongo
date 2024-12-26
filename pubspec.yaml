@@ -47,5 +47,14 @@ flutter:
     - assets/images/danger_image.png
     - assets/sounds/
     - assets/bgm/
+    - assets/fonts/
     - assets/images/
+
+  fonts:
+   - family: DotGothic
+     fonts:
+       - asset: assets/fonts/dot_gothic/DotGothic16-Regular.ttf
+
   uses-material-design: true
+
+
