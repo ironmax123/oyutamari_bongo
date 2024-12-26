@@ -18,16 +18,18 @@ class ButtonOi extends StatelessWidget {
       children: [
         ImageButton(
           imagePath: Assets.images.miniButton.path,
+          isMini: true,
           text: se1.displayName,
           se: se1,
-          width: 50,
+          width: 120,
           height: 50,
         ),
         ImageButton(
           imagePath: Assets.images.miniButton.path,
+          isMini: true,
           text: se2.displayName,
           se: se2,
-          width: 50,
+          width: 120,
           height: 50,
         ),
       ],

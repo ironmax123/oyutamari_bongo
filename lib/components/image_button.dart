@@ -44,7 +44,7 @@ class ImageButton extends HookConsumerWidget {
                 text ?? '',
                 maxLines: 2,
                 overflow: TextOverflow.visible,
-                style: TextStyle(fontSize: isMini ? 16 : 12),
+                style: TextStyle(fontSize: isMini ? 10 : 16),
               ),
             ),
           ],

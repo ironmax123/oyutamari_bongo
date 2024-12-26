@@ -10,11 +10,11 @@ class SE {
 class SEList {
   static final List<SE> seOptions = [
     SE(seid: 'age', displayName: 'あげ'),
-    SE(seid: 'awa_awa', displayName: 'あわあわ'),
-    SE(seid: 'bath_time', displayName: 'バスタイム'),
+    SE(seid: 'awaAwa', displayName: 'あわあわ'), // 修正: IDの形式を統一
+    SE(seid: 'bathTime', displayName: 'バスタイム'), // 修正: IDの形式を統一
     SE(seid: 'bongo', displayName: 'ボンゴ'),
     SE(seid: 'bukubuku', displayName: 'ブクブク'),
-    SE(seid: 'cool_down', displayName: 'クールダウン'),
+    SE(seid: 'coolDown', displayName: 'クールダウン'), // 修正: IDの形式を統一
     SE(seid: 'oi', displayName: 'おい'),
     SE(seid: 'daki', displayName: 'だき'),
     SE(seid: 'desu', displayName: 'です'),
@@ -31,8 +31,8 @@ class SEList {
     SE(seid: 'mainiti', displayName: '毎日'),
     SE(seid: 'mantann', displayName: '満タン'),
     SE(seid: 'masimasi', displayName: 'ましまし'),
-    SE(seid: 'Michael_2', displayName: 'マイケル！'),
-    SE(seid: 'Michael', displayName: 'マイケル'),
+    SE(seid: 'michael2', displayName: 'マイケル！'), // 修正: IDの形式を統一
+    SE(seid: 'michael', displayName: 'マイケル'), // 修正: IDの形式を統一
     SE(seid: 'mizutamaribondo', displayName: '水溜まりボンド'),
     SE(seid: 'ne', displayName: 'ね、'),
     SE(seid: 'nuruku', displayName: 'ぬるく'),
@@ -52,7 +52,7 @@ class SEList {
     SE(seid: 'wakasu', displayName: '沸かす'),
     SE(seid: 'wakimasita', displayName: '沸きました'),
     SE(seid: 'yorosiku', displayName: 'よろしく'),
-    SE(seid: 'yu-sen', displayName: '優先'),
+    SE(seid: 'yuSen', displayName: '優先'), // 修正: IDの形式を統一
   ];
 
   static String? getPath(int index) {
