@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
 import 'package:oyutamaribondo/gen/assets.gen.dart';
+import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
 
 class Buttoncomponents2 extends StatelessWidget {
-  const Buttoncomponents2({super.key});
-
+  const Buttoncomponents2({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,9 +15,7 @@ class Buttoncomponents2 extends StatelessWidget {
           imagePath: Assets.images.lightButton.path,
           width: 100,
           height: 50,
-          onPressed: () {
-            // ボタン6の処理
-          },
+          se: SE(seid: '', displayName: ''), //TODO:se指定
         ),
         Divider(
           color: Colors.grey[150],
@@ -26,9 +26,7 @@ class Buttoncomponents2 extends StatelessWidget {
           imagePath: Assets.images.fanButton.path,
           width: 100,
           height: 50,
-          onPressed: () {
-            // ボタン6の処理
-          },
+          se: SE(seid: '', displayName: ''), //TODO:se指定
         ),
       ],
     );

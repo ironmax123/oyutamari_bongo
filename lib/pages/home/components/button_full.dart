@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
 import 'package:oyutamaribondo/gen/assets.gen.dart';
+import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
 
 class ButtonFull extends StatelessWidget {
-  const ButtonFull({super.key});
+  const ButtonFull({
+    super.key,
+    required this.se1,
+    required this.se2,
+    required this.se3,
+    required this.se4,
+  });
+  final SE se1;
+  final SE se2;
+  final SE se3;
+  final SE se4;
 
   @override
   Widget build(BuildContext context) {
@@ -13,17 +24,17 @@ class ButtonFull extends StatelessWidget {
           children: [
             ImageButton(
               imagePath: Assets.images.roundButton.path,
-              text: 'サークル',
+              text: se1.displayName,
               width: 100,
               height: 50,
-              onPressed: () {},
+              se: se1,
             ),
             ImageButton(
               imagePath: Assets.images.roundButton.path,
-              text: 'サークル',
+              text: se2.displayName,
+              se: se2,
               width: 100,
               height: 50,
-              onPressed: () {},
             ),
           ],
         ),
@@ -31,17 +42,17 @@ class ButtonFull extends StatelessWidget {
           children: [
             ImageButton(
               imagePath: Assets.images.roundButton.path,
-              text: 'サークル',
+              text: se3.displayName,
+              se: se3,
               width: 100,
               height: 50,
-              onPressed: () {},
             ),
             ImageButton(
               imagePath: Assets.images.roundButton.path,
-              text: 'サークル',
+              text: se4.displayName,
+              se: se4,
               width: 100,
               height: 50,
-              onPressed: () {},
             ),
           ],
         ),

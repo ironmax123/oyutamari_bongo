@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -25,7 +27,7 @@ Widget soundButtonWidget(AudioPlayer audioPlayer) {
   );
 }
 
-/*Widget randomButtonWidget(AudioPlayer audioPlayer) {
+Widget randomButtonWidget(AudioPlayer audioPlayer) {
   final random = Random();
   final randomOptions = List<SE>.from(SEList.seOptions)..shuffle(random);
   final selectedOptions = randomOptions.take(2).toList();
@@ -49,4 +51,3 @@ Widget soundButtonWidget(AudioPlayer audioPlayer) {
     }).toList(),
   );
 }
-*/
