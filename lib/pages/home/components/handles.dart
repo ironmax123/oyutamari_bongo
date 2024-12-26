@@ -15,16 +15,16 @@ class Handles extends StatelessWidget {
         const SizedBox(width: 16),
         ImageButton(
           imagePath: Assets.images.handleRed.path,
-          se: SE(seid: '', displayName: ''), //TODO:se指定
-
+          isConstant: true,
+          se: SE(seid: 'scratch1', displayName: ''),
           width: 100,
           height: 100,
         ),
         const SizedBox(width: 16),
         ImageButton(
           imagePath: Assets.images.handleBlue.path,
-          se: SE(seid: '', displayName: ''), //TODO:se指定
-
+          se: SE(seid: 'scratch2', displayName: ''),
+          isConstant: true,
           width: 100,
           height: 100,
         ),

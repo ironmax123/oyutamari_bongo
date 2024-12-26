@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:oyutamaribondo/components/switch_button.dart';
 import 'package:oyutamaribondo/gen/assets.gen.dart';
 import 'package:oyutamaribondo/pages/home/components/handles.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components2.dart';
@@ -69,22 +70,15 @@ class HomePage extends HookConsumerWidget {
                                   imagePath: Assets.images.a026.path,
                                   width: 200,
                                   height: 110,
-                                  se: SE(
-                                      seid: '', displayName: ''), // TODO: SE指定
+                                  se: SE(seid: 'ohuro', displayName: ''),
+                                  isConstant: true,
                                 ),
                                 SizedBox(
                                   width: 200,
                                   child: Row(
                                     children: [
-                                      ImageButton(
-                                        imagePath: Assets.images.switchOn.path,
-                                        width: 120,
-                                        height: 100,
-                                        se: SE(
-                                            seid: '',
-                                            displayName: ''), // TODO: SE指定
-                                      ),
-                                      SizedBox(
+                                      const SwitchButton(),
+                                      const SizedBox(
                                         width: 24,
                                       ),
                                       Expanded(

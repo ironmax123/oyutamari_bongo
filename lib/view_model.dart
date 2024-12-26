@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -18,23 +19,22 @@ class HomePageVM extends _$HomePageVM {
     return HomePageState(seList: selectedOptions);
   }
 
-  Future<void> playSe(SE se) async {
+  Future<void> playSe(SE se, {bool isConstant = false}) async {
     try {
-      final path = SEList.getPathBySeId(se.seid);
-      print('Resolved path: $path');
+      final path = isConstant
+          ? SEList.getConstPathBySeId(se.seid)
+          : SEList.getPathBySeId(se.seid);
 
       if (path == null) {
         return;
       }
 
-      // AudioPlayerにファイルを設定
       await audioPlayer.setAsset(path);
       await audioPlayer.play();
-      print('Playback started for SE: ${se.displayName}');
     } catch (e, stackTrace) {
-      print('Error while playing SE: ${se.displayName}');
-      print('Exception: $e');
-      print('StackTrace: $stackTrace');
+      debugPrint('Error while playing SE: ${se.displayName}');
+      debugPrint('Exception: $e');
+      debugPrint('StackTrace: $stackTrace');
     }
   }
 }

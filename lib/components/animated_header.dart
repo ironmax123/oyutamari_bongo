@@ -3,7 +3,7 @@ import 'package:rive/rive.dart';
 import '../enums/animation_path.dart'; // 変更箇所: AnimationPath をインポート
 
 class AnimatedHeader extends StatefulWidget {
-  const AnimatedHeader({Key? key}) : super(key: key);
+  const AnimatedHeader({super.key});
 
   @override
   AnimatedHeaderState createState() => AnimatedHeaderState();

@@ -228,6 +228,9 @@ class $AssetsSoundsGen {
   /// File path: assets/sounds/nuruku.mp3
   String get nuruku => 'assets/sounds/nuruku.mp3';
 
+  /// File path: assets/sounds/off.mp3
+  String get off => 'assets/sounds/off.mp3';
+
   /// File path: assets/sounds/ohuro.mp3
   String get ohuro => 'assets/sounds/ohuro.mp3';
 
@@ -260,6 +263,12 @@ class $AssetsSoundsGen {
 
   /// File path: assets/sounds/saiko-.mp3
   String get saiko => 'assets/sounds/saiko-.mp3';
+
+  /// File path: assets/sounds/scratch_1.mp3
+  String get scratch1 => 'assets/sounds/scratch_1.mp3';
+
+  /// File path: assets/sounds/scratch_2.mp3
+  String get scratch2 => 'assets/sounds/scratch_2.mp3';
 
   /// File path: assets/sounds/se1.mp3
   String get se1 => 'assets/sounds/se1.mp3';
@@ -296,6 +305,9 @@ class $AssetsSoundsGen {
 
   /// File path: assets/sounds/wakimasita.mp3
   String get wakimasita => 'assets/sounds/wakimasita.mp3';
+
+  /// File path: assets/sounds/wind.mp3
+  String get wind => 'assets/sounds/wind.mp3';
 
   /// File path: assets/sounds/yorosiku.mp3
   String get yorosiku => 'assets/sounds/yorosiku.mp3';
@@ -335,6 +347,7 @@ class $AssetsSoundsGen {
         mizutamaribondo,
         ne,
         nuruku,
+        off,
         ohuro,
         ohuroga,
         oi,
@@ -346,6 +359,8 @@ class $AssetsSoundsGen {
         pikapika,
         sage,
         saiko,
+        scratch1,
+        scratch2,
         se1,
         se2,
         se3,
@@ -358,6 +373,7 @@ class $AssetsSoundsGen {
         unten,
         wakasu,
         wakimasita,
+        wind,
         yorosiku,
         yuSen
       ];

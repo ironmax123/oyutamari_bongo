@@ -15,7 +15,8 @@ class Buttoncomponents2 extends StatelessWidget {
           imagePath: Assets.images.lightButton.path,
           width: 100,
           height: 50,
-          se: SE(seid: '', displayName: ''), //TODO:se指定
+          se: SE(seid: 'lightUp', displayName: ''),
+          isConstant: true,
         ),
         Divider(
           color: Colors.grey[150],
@@ -26,7 +27,8 @@ class Buttoncomponents2 extends StatelessWidget {
           imagePath: Assets.images.fanButton.path,
           width: 100,
           height: 50,
-          se: SE(seid: '', displayName: ''), //TODO:se指定
+          se: SE(seid: 'wind', displayName: ''),
+          isConstant: true,
         ),
       ],
     );

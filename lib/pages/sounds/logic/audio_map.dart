@@ -106,6 +106,8 @@ class AudioMap {
         return Assets.sounds.oi;
       case 'on':
         return Assets.sounds.on;
+      case 'off':
+        return Assets.sounds.off;
       case 'onegaisimasu':
         return Assets.sounds.onegaisimasu;
       case 'oreha':
@@ -140,6 +142,12 @@ class AudioMap {
         return Assets.sounds.yorosiku;
       case 'yuSen':
         return Assets.sounds.yuSen;
+      case 'scratch1':
+        return Assets.sounds.scratch1;
+      case 'scratch2':
+        return Assets.sounds.scratch2;
+      case 'wind':
+        return Assets.sounds.wind;
       default:
         return null; // デフォルトでは null を返します
     }
