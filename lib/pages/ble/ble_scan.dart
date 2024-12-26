@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:oyutamaribondo/pages/home/home_page.dart';
 
 //import '../sounds/sound_rp.dart';
 import '../../view_model.dart';
@@ -120,7 +121,8 @@ class BleScanPage extends HookConsumerWidget {
                     onPressed: startScan,
                     child: const Text("Retry Scan"),
                   )
-            : Column(
+            : const HomePage(),
+        /*Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -133,7 +135,7 @@ class BleScanPage extends HookConsumerWidget {
                     style: const TextStyle(fontSize: 32),
                   ),
                 ],
-              ), //TODO:Home画面に置き換え
+              ), //TODO:Home画面に置き換え*/
       ),
     );
   }
