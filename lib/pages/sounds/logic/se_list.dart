@@ -1,4 +1,4 @@
-import './audio_map.dart';
+import 'audio_map.dart';
 
 class SE {
   final String seid;
@@ -60,5 +60,12 @@ class SEList {
       return null;
     }
     return AudioMap.getPathById(seOptions[index].seid);
+  }
+
+  static String? getPathBySeId(String seid) {
+    final se = seOptions.firstWhere(
+      (se) => se.seid == seid,
+    );
+    return AudioMap.getPathById(se.seid);
   }
 }

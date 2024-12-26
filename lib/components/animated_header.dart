@@ -1,47 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
+import '../enums/animation_path.dart'; // 変更箇所: AnimationPath をインポート
 
 class AnimatedHeader extends StatefulWidget {
   const AnimatedHeader({Key? key}) : super(key: key);
 
   @override
-  _AnimatedHeaderState createState() => _AnimatedHeaderState();
+  AnimatedHeaderState createState() => AnimatedHeaderState();
 }
 
-class _AnimatedHeaderState extends State<AnimatedHeader>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
+class AnimatedHeaderState extends State<AnimatedHeader> {
+  late RiveAnimationController _controller;
+  AnimationPath animationPath = AnimationPath.second;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: 2),
-      vsync: this,
-    )..repeat(reverse: true);
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
+    _controller = SimpleAnimation('Timeline 1'); // 変更箇所: SimpleAnimation に変更
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  void toggleAnimation() {
+    setState(() {
+      animationPath = animationPath == AnimationPath.second
+          ? AnimationPath.third
+          : AnimationPath.second;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: _animation,
-      child: Container(
-        height: 250,
-        color: Colors.blue,
-        child: const Center(
-          child: Text(
-            'アニメーションヘッダー',
-            style: TextStyle(fontSize: 24, color: Colors.white),
+    debugPrint('Building AnimatedHeader widget');
+    return Stack(
+      children: [
+        Container(
+          height: 300,
+          color: Colors.blue,
+          child: Center(
+            child: RiveAnimation.asset(
+              animationPath.path,
+              controllers: [_controller],
+              fit: BoxFit.cover,
+              onInit: (_) {
+                debugPrint('Rive animation loaded');
+              },
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }
