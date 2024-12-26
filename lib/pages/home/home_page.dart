@@ -11,18 +11,13 @@ import 'package:oyutamaribondo/components/image_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  AnimationPath _currentAnimation = AnimationPath.first;
-
-  void _changeAnimationPath(AnimationPath newPath) {
-    setState(() {
-      _currentAnimation = newPath;
-    });
-  }
+  final _keyAnimatedHeaderWidget = GlobalKey<AnimatedHeaderState>();
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +30,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          const AnimatedHeader(
-            animationPath: AnimationPath.third,
-          ),
+          AnimatedHeader(key: _keyAnimatedHeaderWidget),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -80,6 +73,7 @@ class _HomePageState extends State<HomePage> {
                               height: 110,
                               onPressed: () {
                                 // ボタン8の処理
+                                _keyAnimatedHeaderWidget.currentState?.toggleAnimation();
                               },
                             ),
                             Row(
