@@ -9,7 +9,6 @@ class SE {
 
 class SEList {
   static final List<SE> seOptions = [
-    SE(seid: 'age', displayName: 'あげ'),
     SE(seid: 'awa_awa', displayName: 'あわあわ'),
     SE(seid: 'bath_time', displayName: 'バスタイム'),
     SE(seid: 'bongo', displayName: 'ボンゴ'),
@@ -42,7 +41,6 @@ class SEList {
     SE(seid: 'osiete', displayName: '教えて'),
     SE(seid: 'otsukare', displayName: 'お疲れ'),
     SE(seid: 'pikapika', displayName: 'ピカピカ'),
-    SE(seid: 'sage', displayName: 'さげ'),
     SE(seid: 'saiko', displayName: '最高'),
     SE(seid: 'stop', displayName: 'ストップ'),
     SE(seid: 'tappuri', displayName: 'たっぷり'),
