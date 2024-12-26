@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
+import 'package:oyutamaribondo/gen/assets.gen.dart';
 
 class ButtonUpdown extends StatelessWidget {
-  const ButtonUpdown({Key? key}) : super(key: key);
+  const ButtonUpdown({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,46 +11,38 @@ class ButtonUpdown extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         ImageButton(
-          imagePath: 'assets/images/button7.png',
+          imagePath: Assets.images.tempUp.path,
           width: 65,
           height: 65,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          onPressed: () {},
         ),
-        SizedBox(height: 16), // 変更箇所: 空白を追加
-
+        const SizedBox(height: 16),
         ImageButton(
-          imagePath: 'assets/images/button7.png',
+          imagePath: Assets.images.tempDown.path,
           width: 65,
           height: 65,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          onPressed: () {},
         ),
         ImageButton(
-          imagePath: 'assets/images/button9.png',
+          imagePath: Assets.images.normalButton.path,
           width: 100,
           height: 60,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          text: 'ふつう',
+          onPressed: () {},
         ),
         ImageButton(
-          imagePath: 'assets/images/button9.png',
+          imagePath: Assets.images.normalButton.path,
           width: 100,
           height: 60,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          text: 'ふつう',
+          onPressed: () {},
         ),
         ImageButton(
-          imagePath: 'assets/images/button9.png',
+          imagePath: Assets.images.normalButton.path,
           width: 100,
           height: 60,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          text: 'ふつう',
+          onPressed: () {},
         ),
       ],
     );

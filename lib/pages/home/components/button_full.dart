@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
+import 'package:oyutamaribondo/gen/assets.gen.dart';
 
 class ButtonFull extends StatelessWidget {
   const ButtonFull({super.key});
@@ -11,40 +12,36 @@ class ButtonFull extends StatelessWidget {
         Row(
           children: [
             ImageButton(
-              imagePath: 'assets/images/button2.png',
+              imagePath: Assets.images.roundButton.path,
+              text: 'サークル',
               width: 100,
               height: 50,
-              onPressed: () {
-                // ボタン7の処理
-              },
+              onPressed: () {},
             ),
             ImageButton(
-              imagePath: 'assets/images/button2.png',
+              imagePath: Assets.images.roundButton.path,
+              text: 'サークル',
               width: 100,
               height: 50,
-              onPressed: () {
-                // ボタン7の処理
-              },
+              onPressed: () {},
             ),
           ],
         ),
         Row(
           children: [
             ImageButton(
-              imagePath: 'assets/images/button2.png',
+              imagePath: Assets.images.roundButton.path,
+              text: 'サークル',
               width: 100,
               height: 50,
-              onPressed: () {
-                // ボタン7の処理
-              },
+              onPressed: () {},
             ),
             ImageButton(
-              imagePath: 'assets/images/button2.png',
+              imagePath: Assets.images.roundButton.path,
+              text: 'サークル',
               width: 100,
               height: 50,
-              onPressed: () {
-                // ボタン7の処理
-              },
+              onPressed: () {},
             ),
           ],
         ),

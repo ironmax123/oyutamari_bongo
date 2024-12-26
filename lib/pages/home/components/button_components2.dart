@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
+import 'package:oyutamaribondo/gen/assets.gen.dart';
 
 class Buttoncomponents2 extends StatelessWidget {
   const Buttoncomponents2({super.key});
@@ -9,7 +10,7 @@ class Buttoncomponents2 extends StatelessWidget {
     return Column(
       children: [
         ImageButton(
-          imagePath: 'assets/images/button6.png',
+          imagePath: Assets.images.lightButton.path,
           width: 100,
           height: 50,
           onPressed: () {
@@ -22,7 +23,7 @@ class Buttoncomponents2 extends StatelessWidget {
           height: 3,
         ),
         ImageButton(
-          imagePath: 'assets/images/button6.png',
+          imagePath: Assets.images.fanButton.path,
           width: 100,
           height: 50,
           onPressed: () {

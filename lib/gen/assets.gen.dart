@@ -28,49 +28,91 @@ class $AssetsBgmGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/button1.png
-  AssetGenImage get button1 => const AssetGenImage('assets/images/button1.png');
+  /// File path: assets/images/026.png
+  AssetGenImage get a026 => const AssetGenImage('assets/images/026.png');
 
-  /// File path: assets/images/button2.png
-  AssetGenImage get button2 => const AssetGenImage('assets/images/button2.png');
+  /// File path: assets/images/circle_green.png
+  AssetGenImage get circleGreen =>
+      const AssetGenImage('assets/images/circle_green.png');
 
-  /// File path: assets/images/button3.png
-  AssetGenImage get button3 => const AssetGenImage('assets/images/button3.png');
+  /// File path: assets/images/circle_pink.png
+  AssetGenImage get circlePink =>
+      const AssetGenImage('assets/images/circle_pink.png');
 
-  /// File path: assets/images/button4.png
-  AssetGenImage get button4 => const AssetGenImage('assets/images/button4.png');
+  /// File path: assets/images/circle_red_button.png
+  AssetGenImage get circleRedButton =>
+      const AssetGenImage('assets/images/circle_red_button.png');
 
-  /// File path: assets/images/button5.png
-  AssetGenImage get button5 => const AssetGenImage('assets/images/button5.png');
-
-  /// File path: assets/images/button6.png
-  AssetGenImage get button6 => const AssetGenImage('assets/images/button6.png');
-
-  /// File path: assets/images/button7.png
-  AssetGenImage get button7 => const AssetGenImage('assets/images/button7.png');
-
-  /// File path: assets/images/button8.png
-  AssetGenImage get button8 => const AssetGenImage('assets/images/button8.png');
-
-  /// File path: assets/images/button9.png
-  AssetGenImage get button9 => const AssetGenImage('assets/images/button9.png');
+  /// File path: assets/images/circle_yellow.png
+  AssetGenImage get circleYellow =>
+      const AssetGenImage('assets/images/circle_yellow.png');
 
   /// File path: assets/images/danger_image.png
   AssetGenImage get dangerImage =>
       const AssetGenImage('assets/images/danger_image.png');
 
+  /// File path: assets/images/fan_button.png
+  AssetGenImage get fanButton =>
+      const AssetGenImage('assets/images/fan_button.png');
+
+  /// File path: assets/images/handle_blue.png
+  AssetGenImage get handleBlue =>
+      const AssetGenImage('assets/images/handle_blue.png');
+
+  /// File path: assets/images/handle_red.png
+  AssetGenImage get handleRed =>
+      const AssetGenImage('assets/images/handle_red.png');
+
+  /// File path: assets/images/light_button.png
+  AssetGenImage get lightButton =>
+      const AssetGenImage('assets/images/light_button.png');
+
+  /// File path: assets/images/mini_button.png
+  AssetGenImage get miniButton =>
+      const AssetGenImage('assets/images/mini_button.png');
+
+  /// File path: assets/images/normal_button.png
+  AssetGenImage get normalButton =>
+      const AssetGenImage('assets/images/normal_button.png');
+
+  /// File path: assets/images/round_button.png
+  AssetGenImage get roundButton =>
+      const AssetGenImage('assets/images/round_button.png');
+
+  /// File path: assets/images/switch_off.png
+  AssetGenImage get switchOff =>
+      const AssetGenImage('assets/images/switch_off.png');
+
+  /// File path: assets/images/switch_on.png
+  AssetGenImage get switchOn =>
+      const AssetGenImage('assets/images/switch_on.png');
+
+  /// File path: assets/images/temp_down.png
+  AssetGenImage get tempDown =>
+      const AssetGenImage('assets/images/temp_down.png');
+
+  /// File path: assets/images/temp_up.png
+  AssetGenImage get tempUp => const AssetGenImage('assets/images/temp_up.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
-        button1,
-        button2,
-        button3,
-        button4,
-        button5,
-        button6,
-        button7,
-        button8,
-        button9,
-        dangerImage
+        a026,
+        circleGreen,
+        circlePink,
+        circleRedButton,
+        circleYellow,
+        dangerImage,
+        fanButton,
+        handleBlue,
+        handleRed,
+        lightButton,
+        miniButton,
+        normalButton,
+        roundButton,
+        switchOff,
+        switchOn,
+        tempDown,
+        tempUp
       ];
 }
 
