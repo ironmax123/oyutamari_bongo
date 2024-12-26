@@ -3,31 +3,32 @@ import 'package:oyutamaribondo/components/image_button.dart';
 import 'package:oyutamaribondo/gen/assets.gen.dart';
 import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
 
-class Buttoncomponents2 extends StatelessWidget {
-  const Buttoncomponents2({
+class Handles extends StatelessWidget {
+  const Handles({
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
+        const SizedBox(width: 16),
         ImageButton(
-          imagePath: Assets.images.lightButton.path,
-          width: 100,
-          height: 50,
+          imagePath: Assets.images.handleRed.path,
           se: SE(seid: '', displayName: ''), //TODO:se指定
+
+          width: 100,
+          height: 100,
         ),
-        Divider(
-          color: Colors.grey[150],
-          thickness: 3,
-          height: 3,
-        ),
+        const SizedBox(width: 16),
         ImageButton(
-          imagePath: Assets.images.fanButton.path,
-          width: 100,
-          height: 50,
+          imagePath: Assets.images.handleBlue.path,
           se: SE(seid: '', displayName: ''), //TODO:se指定
+
+          width: 100,
+          height: 100,
         ),
+        const SizedBox(width: 16),
       ],
     );
   }

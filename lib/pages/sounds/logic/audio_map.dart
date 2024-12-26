@@ -39,7 +39,7 @@ class AudioMap {
       case 'se4':
         return Assets.sounds.se4;
       default:
-        return null;
+        return Assets.sounds.se4;
     }
   }
 }

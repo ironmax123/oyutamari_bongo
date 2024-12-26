@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/pages/ble/ble_test.dart';
 import 'package:oyutamaribondo/pages/home/home_page.dart';
@@ -13,7 +14,7 @@ void main() async {
     debugPrint("Error: $e");
   }
 
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
