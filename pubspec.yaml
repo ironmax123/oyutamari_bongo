@@ -46,4 +46,6 @@ flutter:
     - assets/images/button9.png  
     - assets/images/danger_image.png
     - assets/sounds/
+    - assets/bgm/
+    - assets/images/
   uses-material-design: true
