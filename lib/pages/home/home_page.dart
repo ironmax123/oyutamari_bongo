@@ -9,7 +9,7 @@ import 'package:oyutamaribondo/components/animated_header.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,71 +25,74 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: [
                   Divider(
-                    color: Colors.grey,
-                    thickness: 5,
+                    color: Colors.grey[150],
+                    thickness: 3,
                     height: 5,
                   ),
                   Row(
                     children: [
-                      Buttoncomponents1(),
+                      const Buttoncomponents1(),
                       SizedBox(
                         height: 100,
                         child: VerticalDivider(
-                          color: Colors.grey,
-                          thickness: 5,
+                          color: Colors.grey[150],
+                          thickness: 3,
                           width: 10,
                         ),
                       ),
-                      Expanded(
+                      const Expanded(
                         child: Buttoncomponents2(),
                       ),
                     ],
                   ),
                   Divider(
-                    color: Colors.grey,
-                    thickness: 5,
+                    color: Colors.grey[150],
+                    thickness: 3,
                     height: 5,
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            ImageButton(
-                              imagePath: 'assets/images/button8.png',
-                              width: 200,
-                              height: 110,
-                              onPressed: () {
-                                // ボタン8の処理
-                              },
-                            ),
-                            Row(
-                              children: [
-                                ImageButton(
-                                  imagePath: 'assets/images/button5.png',
-                                  width: 100,
-                                  height: 100,
-                                  onPressed: () {
-                                    // ボタン8の処理
-                                  },
-                                ),
-                                SizedBox(width: 10), // 変更箇所: 空白を追加
-                                ButtonOi(),
-                              ],
-                            ),
-                            ButtonFull(),
-                          ],
-                        ),
-                        Expanded(
-                          child: ButtonUpdown(),
-                        ),
-                        ButtonCircle(),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      const SizedBox(width: 16),
+                      Column(
+                        children: [
+                          ImageButton(
+                            imagePath: 'assets/images/button8.png',
+                            width: 200,
+                            height: 110,
+                            onPressed: () {
+                              // ボタン8の処理
+                            },
+                          ),
+                          const SizedBox(width: 16),
+                          Row(
+                            children: [
+                              ImageButton(
+                                imagePath: 'assets/images/button5.png',
+                                width: 100,
+                                height: 100,
+                                onPressed: () {
+                                  // ボタン8の処理
+                                },
+                              ),
+                              const SizedBox(width: 16),
+                              const ButtonOi(),
+                            ],
+                          ),
+                          const SizedBox(width: 16),
+                          const ButtonFull(),
+                          const SizedBox(width: 16),
+                        ],
+                      ),
+                      const SizedBox(width: 8),
+                      const Expanded(
+                        child: ButtonUpdown(),
+                      ),
+                      const SizedBox(width: 6),
+                      const ButtonCircle(),
+                    ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
                     child: Row(
                       children: [
                         Image.asset(
@@ -98,11 +101,14 @@ class HomePage extends StatelessWidget {
                           height: 30,
                           fit: BoxFit.cover,
                         ),
-                        const SizedBox(height: 30),
-                        const Text(
-                          'フッターのテキスト',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            'フッターのテキスト' * 100,
+                            maxLines: 2,
+                            style: const TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ],
                     ),
