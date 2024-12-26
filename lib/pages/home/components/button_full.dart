@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
 
 class ButtonFull extends StatelessWidget {
-  const ButtonFull({Key? key}) : super(key: key);
+  const ButtonFull({super.key});
 
   @override
   Widget build(BuildContext context) {

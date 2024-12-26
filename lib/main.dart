@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/pages/ble/ble_test.dart';
-
 import 'pages/sounds/sound_rp.dart';
+import 'package:oyutamaribondo/pages/home/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         title: 'お湯たまりボンゴ',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          fontFamily: 'DotGothic',
         ),
         home: const LoadBlePage());
   }
