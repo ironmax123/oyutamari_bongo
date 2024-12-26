@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oyutamaribondo/enums/animation_path.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components1.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components2.dart';
 import 'package:oyutamaribondo/pages/home/components/button_full.dart';
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const AnimatedHeader(),
+          const AnimatedHeader(
+            animationPath: AnimationPath.first,
+          ),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
