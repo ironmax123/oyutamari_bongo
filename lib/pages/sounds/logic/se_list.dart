@@ -1,4 +1,4 @@
-import './audio_map.dart';
+import 'audio_map.dart';
 
 class SE {
   final String seid;
@@ -9,10 +9,51 @@ class SE {
 
 class SEList {
   static final List<SE> seOptions = [
-    SE(seid: 'se1', displayName: 'たっぷり'),
-    SE(seid: 'se2', displayName: 'あつく'),
-    SE(seid: 'se3', displayName: 'ぬるく'),
-    SE(seid: 'se4', displayName: '満タン'),
+
+    SE(seid: 'age', displayName: 'あげ'),
+    SE(seid: 'awaAwa', displayName: 'あわあわ'), // 修正: IDの形式を統一
+    SE(seid: 'bathTime', displayName: 'バスタイム'), // 修正: IDの形式を統一
+
+    SE(seid: 'bongo', displayName: 'ボンゴ'),
+    SE(seid: 'bukubuku', displayName: 'ブクブク'),
+    SE(seid: 'coolDown', displayName: 'クールダウン'), // 修正: IDの形式を統一
+    SE(seid: 'oi', displayName: 'おい'),
+    SE(seid: 'daki', displayName: 'だき'),
+    SE(seid: 'desu', displayName: 'です'),
+    SE(seid: 'disco', displayName: 'ディスコ'),
+    SE(seid: 'douga', displayName: '動画'),
+    SE(seid: 'doumo', displayName: 'どうも'),
+    SE(seid: 'fever', displayName: 'フィーバー'),
+    SE(seid: 'floor', displayName: 'フロア'),
+    SE(seid: 'gannbatte', displayName: '頑張って'),
+    SE(seid: 'hai', displayName: 'はい'),
+    SE(seid: 'ikimasyou', displayName: '行きましょう'),
+    SE(seid: 'kanta', displayName: 'カンタ'),
+    SE(seid: 'kyoumo', displayName: '今日も'),
+    SE(seid: 'mainiti', displayName: '毎日'),
+    SE(seid: 'mantann', displayName: '満タン'),
+    SE(seid: 'masimasi', displayName: 'ましまし'),
+    SE(seid: 'michael2', displayName: 'マイケル！'), // 修正: IDの形式を統一
+    SE(seid: 'michael', displayName: 'マイケル'), // 修正: IDの形式を統一
+    SE(seid: 'mizutamaribondo', displayName: '水溜まりボンド'),
+    SE(seid: 'ne', displayName: 'ね、'),
+    SE(seid: 'nuruku', displayName: 'ぬるく'),
+    SE(seid: 'ohuroga', displayName: 'お風呂が'),
+    SE(seid: 'onegaisimasu', displayName: 'お願いします'),
+    SE(seid: 'oreha', displayName: '俺は'),
+    SE(seid: 'osiete', displayName: '教えて'),
+    SE(seid: 'otsukare', displayName: 'お疲れ'),
+    SE(seid: 'pikapika', displayName: 'ピカピカ'),
+    SE(seid: 'saiko', displayName: '最高'),
+    SE(seid: 'stop', displayName: 'ストップ'),
+    SE(seid: 'tappuri', displayName: 'たっぷり'),
+    SE(seid: 'tomi', displayName: 'トミー'),
+    SE(seid: 'tyaputyapu', displayName: 'ちゃぷちゃぷ'),
+    SE(seid: 'unten', displayName: '運転'),
+    SE(seid: 'wakasu', displayName: '沸かす'),
+    SE(seid: 'wakimasita', displayName: '沸きました'),
+    SE(seid: 'yorosiku', displayName: 'よろしく'),
+    SE(seid: 'yuSen', displayName: '優先'), // 修正: IDの形式を統一
   ];
 
   static String? getPath(int index) {
@@ -20,5 +61,12 @@ class SEList {
       return null;
     }
     return AudioMap.getPathById(seOptions[index].seid);
+  }
+
+  static String? getPathBySeId(String seid) {
+    final se = seOptions.firstWhere(
+      (se) => se.seid == seid,
+    );
+    return AudioMap.getPathById(se.seid);
   }
 }

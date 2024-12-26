@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
+import 'package:oyutamaribondo/gen/assets.gen.dart';
+import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
 
 class ButtonUpdown extends StatelessWidget {
-  const ButtonUpdown({Key? key}) : super(key: key);
+  const ButtonUpdown({
+    required this.se1,
+    required this.se2,
+    required this.se3,
+    super.key,
+  });
+  final SE se1;
+  final SE se2;
+  final SE se3;
 
   @override
   Widget build(BuildContext context) {
@@ -10,46 +20,38 @@ class ButtonUpdown extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         ImageButton(
-          imagePath: 'assets/images/button7.png',
+          imagePath: Assets.images.tempUp.path,
           width: 65,
           height: 65,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          se: SE(seid: '', displayName: ''), //TODO:se指定
         ),
-        SizedBox(height: 16), // 変更箇所: 空白を追加
-
+        const SizedBox(height: 16),
         ImageButton(
-          imagePath: 'assets/images/button7.png',
+          imagePath: Assets.images.tempDown.path,
           width: 65,
           height: 65,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          se: SE(seid: '', displayName: ''), //TODO:se指定
         ),
         ImageButton(
-          imagePath: 'assets/images/button9.png',
+          imagePath: Assets.images.normalButton.path,
           width: 100,
           height: 60,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          text: se1.displayName,
+          se: se1,
         ),
         ImageButton(
-          imagePath: 'assets/images/button9.png',
+          imagePath: Assets.images.normalButton.path,
           width: 100,
           height: 60,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          text: se2.displayName,
+          se: se2,
         ),
         ImageButton(
-          imagePath: 'assets/images/button9.png',
+          imagePath: Assets.images.normalButton.path,
           width: 100,
           height: 60,
-          onPressed: () {
-            // ボタン7の処理
-          },
+          text: se3.displayName,
+          se: se3,
         ),
       ],
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:oyutamaribondo/pages/home/home_page.dart';
 
 import 'pages/ble/ble_test.dart';
 
@@ -13,6 +15,7 @@ void main() async {
     debugPrint("Error: $e");
   }
 
+  runApp(const ProviderScope(child: MyApp()));
   runApp(const ProviderScope(child: MyApp()));
 }
 
