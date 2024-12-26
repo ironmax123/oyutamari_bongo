@@ -1,28 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
+import 'package:oyutamaribondo/gen/assets.gen.dart';
+import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
 
 class ButtonOi extends StatelessWidget {
-  const ButtonOi({Key? key}) : super(key: key);
+  const ButtonOi({
+    required this.se1,
+    required this.se2,
+    super.key,
+  });
+  final SE se1;
+  final SE se2;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         ImageButton(
-          imagePath: 'assets/images/button1.png',
+          imagePath: Assets.images.miniButton.path,
+          text: se1.displayName,
+          se: se1,
           width: 50,
           height: 50,
-          onPressed: () {
-            // ボタン7の処理
-          },
         ),
         ImageButton(
-          imagePath: 'assets/images/button1.png',
+          imagePath: Assets.images.miniButton.path,
+          text: se2.displayName,
+          se: se2,
           width: 50,
           height: 50,
-          onPressed: () {
-            // ボタン7の処理
-          },
         ),
       ],
     );

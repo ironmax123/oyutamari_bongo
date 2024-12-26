@@ -1,8 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
 
 part 'state.freezed.dart';
 
 @freezed
 class HomePageState with _$HomePageState {
-  const factory HomePageState({required String test}) = _HomePageState;
+  const factory HomePageState({required List<SE> seList}) = _HomePageState;
 }
