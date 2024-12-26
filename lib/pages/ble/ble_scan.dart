@@ -120,8 +120,7 @@ class BleScanPage extends HookConsumerWidget {
                     onPressed: startScan,
                     child: const Text("Retry Scan"),
                   )
-            : //const SoundsRp()
-            Column(
+            : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
