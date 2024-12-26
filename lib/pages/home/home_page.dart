@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  AnimationPath _currentAnimation = AnimationPath.first;
+  AnimationPath _currentAnimation = AnimationPath.fourth;
 
   void _changeAnimationPath(AnimationPath newPath) {
     setState(() {
@@ -35,8 +35,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          const AnimatedHeader(
-            animationPath: AnimationPath.third,
+          AnimatedHeader(
+            animationPath: _currentAnimation,
           ),
           Expanded(
             child: SingleChildScrollView(
