@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oyutamaribondo/enums/animation_path.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components1.dart';
 import 'package:oyutamaribondo/pages/home/components/button_components2.dart';
 import 'package:oyutamaribondo/pages/home/components/button_full.dart';
@@ -8,18 +9,28 @@ import 'package:oyutamaribondo/pages/home/components/button_circle.dart';
 import 'package:oyutamaribondo/components/animated_header.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final _keyAnimatedHeaderWidget = GlobalKey<AnimatedHeaderState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('お湯たまりボンゴ'),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(20.0), // 変更箇所: AppBarの高さを指定
+        child: AppBar(
+          title: const Text('お湯たまりボンゴ'),
+        ),
       ),
       body: Column(
         children: [
-          const AnimatedHeader(),
+          AnimatedHeader(key: _keyAnimatedHeaderWidget),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
