@@ -9,19 +9,34 @@ import 'package:oyutamaribondo/pages/home/components/button_circle.dart';
 import 'package:oyutamaribondo/components/animated_header.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  AnimationPath _currentAnimation = AnimationPath.first;
+
+  void _changeAnimationPath(AnimationPath newPath) {
+    setState(() {
+      _currentAnimation = newPath;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('お湯たまりボンゴ'),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(20.0), // 変更箇所: AppBarの高さを指定
+        child: AppBar(
+          title: const Text('お湯たまりボンゴ'),
+        ),
       ),
       body: Column(
         children: [
           const AnimatedHeader(
-            animationPath: AnimationPath.first,
+            animationPath: AnimationPath.third,
           ),
           Expanded(
             child: SingleChildScrollView(
