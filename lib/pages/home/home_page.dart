@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  AnimationPath _currentAnimation = AnimationPath.fourth;
+  AnimationPath _currentAnimation = AnimationPath.second;
 
   void _changeAnimationPath(AnimationPath newPath) {
     setState(() {

@@ -26,7 +26,7 @@ class _AnimatedHeaderState extends State<AnimatedHeader> {
     return Stack(
       children: [
         Container(
-          height: 250,
+          height: 300,
           color: Colors.blue,
           child: Center(
             child: RiveAnimation.asset(
