@@ -7,7 +7,7 @@ class ButtonUpdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         ImageButton(
           imagePath: 'assets/images/button7.png',
@@ -17,7 +17,7 @@ class ButtonUpdown extends StatelessWidget {
             // ボタン7の処理
           },
         ),
-        SizedBox(height: 10), // 変更箇所: 空白を追加
+        SizedBox(height: 16), // 変更箇所: 空白を追加
 
         ImageButton(
           imagePath: 'assets/images/button7.png',

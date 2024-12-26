@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:oyutamaribondo/components/image_button.dart';
 
 class Buttoncomponents2 extends StatelessWidget {
-  const Buttoncomponents2({Key? key}) : super(key: key);
+  const Buttoncomponents2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Buttoncomponents2 extends StatelessWidget {
           },
         ),
         Divider(
-          color: Colors.grey,
+          color: Colors.grey[150],
           thickness: 3,
           height: 3,
         ),
