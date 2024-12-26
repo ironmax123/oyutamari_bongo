@@ -9,9 +9,11 @@ class SE {
 
 class SEList {
   static final List<SE> seOptions = [
+
     SE(seid: 'age', displayName: 'あげ'),
     SE(seid: 'awaAwa', displayName: 'あわあわ'), // 修正: IDの形式を統一
     SE(seid: 'bathTime', displayName: 'バスタイム'), // 修正: IDの形式を統一
+
     SE(seid: 'bongo', displayName: 'ボンゴ'),
     SE(seid: 'bukubuku', displayName: 'ブクブク'),
     SE(seid: 'coolDown', displayName: 'クールダウン'), // 修正: IDの形式を統一
@@ -42,7 +44,6 @@ class SEList {
     SE(seid: 'osiete', displayName: '教えて'),
     SE(seid: 'otsukare', displayName: 'お疲れ'),
     SE(seid: 'pikapika', displayName: 'ピカピカ'),
-    SE(seid: 'sage', displayName: 'さげ'),
     SE(seid: 'saiko', displayName: '最高'),
     SE(seid: 'stop', displayName: 'ストップ'),
     SE(seid: 'tappuri', displayName: 'たっぷり'),
