@@ -73,7 +73,8 @@ class _HomePageState extends State<HomePage> {
                               height: 110,
                               onPressed: () {
                                 // ボタン8の処理
-                                _keyAnimatedHeaderWidget.currentState?.toggleAnimation();
+                                _keyAnimatedHeaderWidget.currentState
+                                    ?.toggleAnimation();
                               },
                             ),
                             Row(
