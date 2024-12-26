@@ -1,11 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '/state.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:oyutamaribondo/pages/sounds/logic/se_list.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:oyutamaribondo/state.dart';
-
 part 'view_model.g.dart';
 
 @riverpod

@@ -1,35 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:oyutamaribondo/pages/sounds/logic/change_speed.dart';
+import 'package:oyutamaribondo/sectionVM.dart';
 import 'package:rive/rive.dart';
 import '../enums/animation_path.dart'; // 変更箇所: AnimationPath をインポート
 
-class AnimatedHeader extends StatefulWidget {
+
+class AnimatedHeader extends HookConsumerWidget {
   const AnimatedHeader({super.key});
 
   @override
-  AnimatedHeaderState createState() => AnimatedHeaderState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    // アニメーションコントローラとパスを状態管理
+    final controller = useMemoized(() => SimpleAnimation('Timeline 1'));
+    SoundsSettings setting = SoundsSettings();
+    final paths = useState<String>(AnimationPath.first.path);
 
-class AnimatedHeaderState extends State<AnimatedHeader> {
-  late RiveAnimationController _controller;
-  AnimationPath animationPath = AnimationPath.second;
+    final filldNum = ref.watch(sectionPageVMProvider).when(
+          data: (data) => data.filldNum,
+          loading: () => 0.0,
+          error: (err, stack) {
+            debugPrint('エラー: $err');
+            return 0.0;
+          },
+        );
 
-  @override
-  void initState() {
-    super.initState();
-    _controller = SimpleAnimation('Timeline 1'); // 変更箇所: SimpleAnimation に変更
-  }
+    useEffect(() {
+      Future<void> updatePath() async {
+        paths.value = (await setting.setPath(filldNum));
+        debugPrint('path:${paths.value}');
+      }
 
-  void toggleAnimation() {
-    setState(() {
-      animationPath = animationPath == AnimationPath.second
+      updatePath();
+      return null; // クリーンアップ不要
+    }, [filldNum]);
+    // アニメーションパス切り替え関数
+    /*void toggleAnimation() {
+      animationPath.value = animationPath.value == AnimationPath.second
           ? AnimationPath.third
           : AnimationPath.second;
-    });
-  }
+    }*/
 
-  @override
-  Widget build(BuildContext context) {
     debugPrint('Building AnimatedHeader widget');
+
     return Stack(
       children: [
         Container(
@@ -37,8 +51,8 @@ class AnimatedHeaderState extends State<AnimatedHeader> {
           color: Colors.blue,
           child: Center(
             child: RiveAnimation.asset(
-              animationPath.path,
-              controllers: [_controller],
+              paths.value,
+              controllers: [controller],
               fit: BoxFit.cover,
               onInit: (_) {
                 debugPrint('Rive animation loaded');
@@ -46,6 +60,14 @@ class AnimatedHeaderState extends State<AnimatedHeader> {
             ),
           ),
         ),
+        /*Positioned(
+          bottom: 20,
+          right: 20,
+          child: ElevatedButton(
+            onPressed: toggleAnimation,
+            child: const Text('Toggle Animation'),
+          ),
+        ),*/
       ],
     );
   }
