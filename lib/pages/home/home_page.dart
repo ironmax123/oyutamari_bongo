@@ -23,138 +23,137 @@ class HomePage extends HookConsumerWidget {
     final sePlayer = useMemoized(() => AudioPlayer());
 
     return ref.watch(homePageVMProvider(sePlayer)).when(
-          data: (data) {
-            final List<SE> seList = data.seList;
-            return Scaffold(
-              appBar: AppBar(
-                title: const Text('お湯たまりボンゴ'),
-              ),
-              body: Column(
-                children: [
-                  const AnimatedHeader(),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
+      data: (data) {
+        final List<SE> seList = data.seList;
+
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('お湯たまりボンゴ'),
+          ),
+          body: Column(
+            children: [
+              const AnimatedHeader(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Divider(
+                        color: Colors.grey[150],
+                        thickness: 3,
+                        height: 5,
+                      ),
+                      Row(
                         children: [
-                          Divider(
-                            color: Colors.grey[150],
-                            thickness: 3,
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              const Handles(),
-                              SizedBox(
-                                height: 100,
-                                child: VerticalDivider(
-                                  color: Colors.grey[150],
-                                  thickness: 3,
-                                  width: 10,
-                                ),
-                              ),
-                              const Expanded(
-                                child: Buttoncomponents2(),
-                              ),
-                            ],
-                          ),
-                          Divider(
-                            color: Colors.grey[150],
-                            thickness: 3,
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              const SizedBox(width: 16),
-                              Column(
-                                children: [
-                                  ImageButton(
-                                    imagePath: Assets.images.a026.path,
-                                    width: 200,
-                                    height: 110,
-                                    se: SE(
-                                        seid: '', displayName: ''), //TODO:se指定
-                                  ),
-                                  const SizedBox(width: 16),
-                                  Row(
-                                    children: [
-                                      ImageButton(
-                                        imagePath: Assets.images.switchOn.path,
-                                        width: 100,
-                                        height: 100,
-                                        se: SE(
-                                            seid: '',
-                                            displayName: ''), //TODO:se指定
-                                      ),
-                                      const SizedBox(width: 16),
-                                      ButtonOi(
-                                        se1: seList[2],
-                                        se2: seList[3],
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(width: 16),
-                                  ButtonFull(
-                                    se1: seList[4],
-                                    se2: seList[5],
-                                    se3: seList[6],
-                                    se4: seList[7],
-                                  ),
-                                  const SizedBox(width: 16),
-                                ],
-                              ),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: ButtonUpdown(
-                                  se1: seList[8],
-                                  se2: seList[9],
-                                  se3: seList[10],
-                                ),
-                              ),
-                              const SizedBox(width: 6),
-                              ButtonCircle(
-                                se1: seList[11],
-                                se2: seList[12],
-                                se3: seList[0],
-                                se4: seList[1],
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 32),
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  Assets.images.dangerImage.path,
-                                  width: 30,
-                                  height: 30,
-                                  fit: BoxFit.cover,
-                                ),
-                                const SizedBox(width: 8),
-                                const Expanded(
-                                  child: Text(
-                                    'フロアが沸くと非常に熱くなるため、やけどなどにお気を付けください',
-                                    maxLines: 2,
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
+                          const Handles(),
+                          SizedBox(
+                            height: 100,
+                            child: VerticalDivider(
+                              color: Colors.grey[150],
+                              thickness: 3,
+                              width: 10,
                             ),
+                          ),
+                          const Expanded(
+                            child: Buttoncomponents2(),
                           ),
                         ],
                       ),
-                    ),
+                      Divider(
+                        color: Colors.grey[150],
+                        thickness: 3,
+                        height: 5,
+                      ),
+                      Row(
+                        children: [
+                          const SizedBox(width: 16),
+                          Column(
+                            children: [
+                              ImageButton(
+                                imagePath: Assets.images.a026.path,
+                                width: 200,
+                                height: 110,
+                                se: SE(seid: '', displayName: ''), // TODO: SE指定
+                              ),
+                              const SizedBox(width: 16),
+                              Row(
+                                children: [
+                                  ImageButton(
+                                    imagePath: Assets.images.switchOn.path,
+                                    width: 100,
+                                    height: 100,
+                                    se: SE(seid: '', displayName: ''), // TODO: SE指定
+                                  ),
+                                  const SizedBox(width: 16),
+                                  ButtonOi(
+                                    se1: seList[2],
+                                    se2: seList[3],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 16),
+                              ButtonFull(
+                                se1: seList[4],
+                                se2: seList[5],
+                                se3: seList[6],
+                                se4: seList[7],
+                              ),
+                              const SizedBox(width: 16),
+                            ],
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: ButtonUpdown(
+                              se1: seList[8],
+                              se2: seList[9],
+                              se3: seList[10],
+                            ),
+                          ),
+                          const SizedBox(width: 6),
+                          ButtonCircle(
+                            se1: seList[11],
+                            se2: seList[12],
+                            se3: seList[0],
+                            se4: seList[1],
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              Assets.images.dangerImage.path,
+                              width: 30,
+                              height: 30,
+                              fit: BoxFit.cover,
+                            ),
+                            const SizedBox(width: 8),
+                            const Expanded(
+                              child: Text(
+                                'フロアが沸くと非常に熱くなるため、やけどなどにお気を付けください',
+                                maxLines: 2,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            );
-          },
-          error: (error, stackTrace) => const Text('error'),
-          loading: () => const SpinKitDoubleBounce(
-            color: Colors.orange,
-            size: 150.0,
+            ],
           ),
         );
+      },
+      error: (error, stackTrace) => const Text('Error loading data'),
+      loading: () => const SpinKitDoubleBounce(
+        color: Colors.orange,
+        size: 150.0,
+      ),
+    );
   }
 }
