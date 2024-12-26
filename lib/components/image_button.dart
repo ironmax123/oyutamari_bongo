@@ -11,6 +11,7 @@ class ImageButton extends HookConsumerWidget {
   final double height;
   final String? text;
   final bool isMini;
+  final bool isConstant;
   final SE se;
 
   const ImageButton({
@@ -19,6 +20,7 @@ class ImageButton extends HookConsumerWidget {
     required this.imagePath,
     this.text,
     this.isMini = false,
+    this.isConstant = false,
     this.width = 100.0,
     this.height = 100.0,
   });
@@ -28,7 +30,10 @@ class ImageButton extends HookConsumerWidget {
     final sePlayer = useMemoized(() => AudioPlayer());
 
     return GestureDetector(
-      onTap: () => ref.read(homePageVMProvider(sePlayer).notifier).playSe(se),
+      onTap: () => ref.read(homePageVMProvider(sePlayer).notifier).playSe(
+            se,
+            isConstant: isConstant,
+          ),
       child: SizedBox(
         width: width,
         height: height,

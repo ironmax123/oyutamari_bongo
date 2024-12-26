@@ -23,14 +23,16 @@ class ButtonUpdown extends StatelessWidget {
           imagePath: Assets.images.tempUp.path,
           width: 65,
           height: 65,
-          se: SE(seid: '', displayName: ''), //TODO:se指定
+          se: SE(seid: 'age', displayName: 'age'),
+          isConstant: true,
         ),
         const SizedBox(height: 16),
         ImageButton(
           imagePath: Assets.images.tempDown.path,
           width: 65,
           height: 65,
-          se: SE(seid: '', displayName: ''), //TODO:se指定
+          se: SE(seid: 'sage', displayName: 'sage'),
+          isConstant: true,
         ),
         ImageButton(
           imagePath: Assets.images.normalButton.path,

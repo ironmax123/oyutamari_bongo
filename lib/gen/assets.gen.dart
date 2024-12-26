@@ -228,6 +228,9 @@ class $AssetsSoundsGen {
   /// File path: assets/sounds/nuruku.mp3
   String get nuruku => 'assets/sounds/nuruku.mp3';
 
+  /// File path: assets/sounds/off.mp3
+  String get off => 'assets/sounds/off.mp3';
+
   /// File path: assets/sounds/ohuro.mp3
   String get ohuro => 'assets/sounds/ohuro.mp3';
 
@@ -344,6 +347,7 @@ class $AssetsSoundsGen {
         mizutamaribondo,
         ne,
         nuruku,
+        off,
         ohuro,
         ohuroga,
         oi,

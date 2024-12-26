@@ -9,14 +9,12 @@ class SE {
 
 class SEList {
   static final List<SE> seOptions = [
-
     SE(seid: 'age', displayName: 'あげ'),
-    SE(seid: 'awaAwa', displayName: 'あわあわ'), // 修正: IDの形式を統一
-    SE(seid: 'bathTime', displayName: 'バスタイム'), // 修正: IDの形式を統一
-
+    SE(seid: 'awaAwa', displayName: 'あわあわ'),
+    SE(seid: 'bathTime', displayName: 'バスタイム'),
     SE(seid: 'bongo', displayName: 'ボンゴ'),
     SE(seid: 'bukubuku', displayName: 'ブクブク'),
-    SE(seid: 'coolDown', displayName: 'クールダウン'), // 修正: IDの形式を統一
+    SE(seid: 'coolDown', displayName: 'クールダウン'),
     SE(seid: 'oi', displayName: 'おい'),
     SE(seid: 'daki', displayName: 'だき'),
     SE(seid: 'desu', displayName: 'です'),
@@ -33,8 +31,8 @@ class SEList {
     SE(seid: 'mainiti', displayName: '毎日'),
     SE(seid: 'mantann', displayName: '満タン'),
     SE(seid: 'masimasi', displayName: 'ましまし'),
-    SE(seid: 'michael2', displayName: 'マイケル！'), // 修正: IDの形式を統一
-    SE(seid: 'michael', displayName: 'マイケル'), // 修正: IDの形式を統一
+    SE(seid: 'michael2', displayName: 'マイケル！'),
+    SE(seid: 'michael', displayName: 'マイケル'),
     SE(seid: 'mizutamaribondo', displayName: '水溜まりボンド'),
     SE(seid: 'ne', displayName: 'ね、'),
     SE(seid: 'nuruku', displayName: 'ぬるく'),
@@ -53,7 +51,20 @@ class SEList {
     SE(seid: 'wakasu', displayName: '沸かす'),
     SE(seid: 'wakimasita', displayName: '沸きました'),
     SE(seid: 'yorosiku', displayName: 'よろしく'),
-    SE(seid: 'yuSen', displayName: '優先'), // 修正: IDの形式を統一
+    SE(seid: 'yuSen', displayName: '優先'),
+  ];
+
+  static final List<SE> constantSE = [
+    SE(seid: 'lightUp', displayName: ''),
+    SE(seid: 'age', displayName: ''),
+    SE(seid: 'sage', displayName: ''),
+    SE(seid: 'age', displayName: ''),
+    SE(seid: 'scratch1', displayName: ''),
+    SE(seid: 'scratch2', displayName: ''),
+    SE(seid: 'ohuro', displayName: ''),
+    SE(seid: 'on', displayName: ''),
+    SE(seid: 'off', displayName: ''),
+    SE(seid: 'wind', displayName: ''),
   ];
 
   static String? getPath(int index) {
@@ -65,6 +76,13 @@ class SEList {
 
   static String? getPathBySeId(String seid) {
     final se = seOptions.firstWhere(
+      (se) => se.seid == seid,
+    );
+    return AudioMap.getPathById(se.seid);
+  }
+
+  static String? getConstPathBySeId(String seid) {
+    final se = constantSE.firstWhere(
       (se) => se.seid == seid,
     );
     return AudioMap.getPathById(se.seid);
